@@ -27,6 +27,13 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7084651179601480"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}

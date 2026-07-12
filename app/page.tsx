@@ -75,14 +75,14 @@ export default function Home() {
         </h2>
 
         <p className="mb-8 leading-8 text-slate-300">
-          活動日期：2026 年 X 月 X 日至 X 月 X 日<br />
+          活動日期：2027 年 1 月 25 日至 1 月 29 日<br />
           活動地點：國立臺灣大學化學系<br />
           招生對象：全國高中職學生<br />
-          報名費用：NT$ XXXX
+          報名費用：NT$ 7500
         </p>
 
         <a
-          href="https://forms.gle/你的表單連結"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfR076Pp1ChtU1-3SQOgQ989M0kuM7ur9sgsv3Yysz5mksVUA/viewform?usp=sharing&ouid=103461614838581818619"
           target="_blank"
           className="inline-block rounded-full bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
         >

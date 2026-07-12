@@ -35,6 +35,7 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
+  
   openGraph: {
     title: siteTitle,
     description: siteDescription,
@@ -48,6 +49,9 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
   },
+  verification: {
+  google: "mRajCIbmLCvk97JZAf1w7vxTen5vNciBuVz61HkcFJ0",
+}
 };
 
 export default function RootLayout({

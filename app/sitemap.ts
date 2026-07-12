@@ -8,6 +8,7 @@ const routes = [
   { path: "/gallery", priority: 0.8 },
   { path: "/registration", priority: 0.8 },
   { path: "/faq", priority: 0.7 },
+  { path: "/contact", priority: 0.7 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

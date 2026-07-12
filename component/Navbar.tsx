@@ -8,7 +8,7 @@ export default function Navbar() {
           NTU Chem Camp
         </Link>
 
-        <div className="flex items-center gap-6 text-sm text-slate-200">
+        <div className="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 text-sm text-slate-200">
           <Link href="/about" className="transition hover:text-cyan-300">
             關於營隊
           </Link>
@@ -23,6 +23,9 @@ export default function Navbar() {
           </Link>
           <Link href="/faq" className="transition hover:text-cyan-300">
             常見問題
+          </Link>
+          <Link href="/contact" className="transition hover:text-cyan-300">
+            聯絡資訊
           </Link>
         </div>
       </nav>

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "報名資訊與退款須知",
+  title: "報名資訊、繳費須知與退款規定",
   description:
-    "了解台大化學營線上報名方式、報名費用、清寒生補助計畫、報名確認與營隊退費相關規定。",
+    "了解台大化學營線上報名方式、報名費用、繳費期限、匯款資訊、清寒生補助計畫與營隊退費相關規定。",
   alternates: {
     canonical: "/registration",
   },
@@ -27,11 +27,36 @@ const subsidyPledges = [
   "營期結束一個月內，須繳交 1000 字心得作為效能評估之用，心得將不會公開。",
 ];
 
+const paymentDeadlines = [
+  {
+    label: "正取生",
+    value: "12/19（二）",
+  },
+  {
+    label: "備取生",
+    value: "待通知後請依照信件內規定的時間繳費。",
+  },
+];
+
+const paymentForms = [
+  {
+    label: "繳費資訊表單",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSdUgNrZbM9b7rbdZY3c5bnmM_qWaUIhF1WNUxPgx8XGPRboLg/viewform",
+  },
+  {
+    label: "學員錄取報到表單",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSeVd1qB3b8SXq-oudquIKT5wg_QMKXYRBLOkvdOaUqR9Q-6wA/viewform",
+  },
+];
+
 const refundRules = [
-  "若學員於營期前因個人因素臨時無法參加，於活動開始含當日前 21 日提出，扣除行政費用後退還九成報名費；於活動開始前 8 至 20 日提出，扣除行政費用後退還七成報名費；於活動開始前 1 至 7 日提出，則不予退費。",
-  "營隊開始前，如遇重大天災、流行病等不可抗力情事致使營隊取消，將以電話或簡訊等方式通知學員，並以匯款方式盡速退還學員所繳交款項七成。",
-  "營期中如遇重大天災、流行病等不可抗力情事，主辦單位將如實告知學員並立即安排歸返事宜。若於第 1 至 3 日終止，扣除必要費用後全額退還；若於第 4 至 5 日終止，除剩餘餐費外恕不退還。",
-  "若學員於營期中因個人因素離營，將不予退費。",
+  "為確保活動品質，主辦方須預先支出食宿、場地等費用。營隊開始前，學員已完成報名及繳費手續，若在活動開始 21 日前（含）因故無法參與營隊，扣除所需行政費用後，退還報名費九成。",
+  "營隊開始前 8 至 20 天內取消參加，退還報名費七成；營隊開始前 7 天內取消參加，恕無法退費。",
+  "營隊開始前，如遇重大天災、流行病等不可抗力情事致使營隊取消，則退還報名費七成，並於原定營期開始日十四日內退還。",
+  "營期中如遇重大天災、流行病等不可抗力情事，為確保學員安全，得由主辦單位決定提前結束。若於營期第 1 至 3 天活動中止，扣除已支出之費用以及未支出但屬必要之費用後，剩餘費用全數退還。",
+  "若於營期第 4 至 5 天活動中止，因活動費用皆已支出，唯餐費可退還，其餘恕不退費。",
+  "營隊進行中，若因學員個人因素未完整參與營隊活動而提早離開，因課程、活動等皆照常進行，恕不退費。",
+  "以上退款方式，若覺有不妥之處，請慎重考慮再行匯款。主辦單位保留活動更動與解釋權。",
 ];
 
 function InfoCard({
@@ -58,13 +83,13 @@ export default function RegistrationPage() {
         </p>
 
         <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-          報名資訊與退款須知
+          報名資訊、繳費須知與退款規定
         </h1>
 
         <p className="max-w-3xl text-lg leading-8 text-slate-300">
           以下整理台大化學營的線上報名流程、費用說明、清寒生補助計畫、
-          報名確認方式與退費規定。報名前請務必詳閱報名簡章，並確認已取得
-          監護人同意。
+          報名確認方式、繳費須知與退費規定。報名前與匯款前請務必詳閱相關
+          說明，並確認已取得監護人同意。
         </p>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -177,7 +202,88 @@ export default function RegistrationPage() {
           </div>
         </InfoCard>
 
-        <InfoCard title="營隊退費相關規定">
+        <InfoCard title="五、繳費須知">
+          <div className="space-y-8 leading-8 text-slate-300">
+            <p className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5 font-semibold text-cyan-100">
+              請詳閱須知以免自身權益受損。
+            </p>
+
+            <div>
+              <h3 className="mb-3 text-xl font-bold text-white">報名費用</h3>
+              <p>
+                一般報名費用為
+                <strong className="mx-1 text-cyan-200">7500 元</strong>
+                ，申請代訂住宿者共
+                <strong className="mx-1 text-cyan-200">9500 元</strong>
+                （住宿費用 2000 元），詳情請見錄取信件通知。
+              </p>
+            </div>
+
+            <div>
+              <h3 className="mb-3 text-xl font-bold text-white">繳費期限</h3>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {paymentDeadlines.map((deadline) => (
+                  <div key={deadline.label} className="rounded-2xl bg-white/5 p-5">
+                    <p className="font-semibold text-cyan-200">
+                      {deadline.label}
+                    </p>
+                    <p className="mt-2">{deadline.value}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-sm leading-7 text-slate-400">
+                ※ 非錄取生請勿匯款，如有此狀況我們將直接退回您的款項，
+                並不負擔轉帳手續費等損失。
+              </p>
+            </div>
+
+            <div>
+              <h3 className="mb-3 text-xl font-bold text-white">匯款資訊</h3>
+              <dl className="grid gap-3 rounded-2xl bg-white/5 p-5 sm:grid-cols-[8rem_1fr]">
+                <dt className="font-semibold text-cyan-200">戶名</dt>
+                <dd>國立臺灣大學化學系學生會</dd>
+                <dt className="font-semibold text-cyan-200">分局</dt>
+                <dd>郵局 700</dd>
+                <dt className="font-semibold text-cyan-200">帳號</dt>
+                <dd>0001236 0539539</dd>
+              </dl>
+              <p className="mt-4 text-sm leading-7 text-slate-400">
+                ※ 請注意，戶名不是臺大化學營。
+              </p>
+            </div>
+
+            <div>
+              <h3 className="mb-3 text-xl font-bold text-white">繳費確認</h3>
+              <p>
+                繳費完成後，請填寫繳費資訊表單。我們確認收到款項後，
+                將在錄取名單上更新繳費記錄（平日更新）。若期限內未填寫表單，
+                則視為未繳費，取消其錄取資格。
+              </p>
+              <p className="mt-4">
+                下方的學員錄取報到表單也請於 12/19（二）23:59 前填寫完畢，
+                填寫完畢才視為完成報到。請自行注意郵局或銀行營業時間。
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                {paymentForms.map((form) => (
+                  <a
+                    key={form.href}
+                    href={form.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-cyan-400 px-6 py-3 text-center font-semibold text-slate-950 transition hover:bg-cyan-300"
+                  >
+                    {form.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </InfoCard>
+
+        <InfoCard title="六、退費規定">
+          <p className="mb-5 leading-8 text-slate-300">
+            相關規定詳列如下，請詳細閱讀，參與本營隊者視為同意下列事項。
+          </p>
           <ol className="space-y-4 leading-8 text-slate-300">
             {refundRules.map((rule, index) => (
               <li key={rule} className="rounded-2xl bg-white/5 px-5 py-4">

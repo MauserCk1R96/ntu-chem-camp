@@ -40,8 +40,12 @@ export const galleryCategories: GalleryCategory[] = [
     description:
       "由專業的學長姐進行化學實驗示範，讓小隊員近距離觀察實驗操作、現象與背後原理。",
     folder: "demo-experiment",
-    coverImage: null,
-    images: [],
+    coverImage: "2026化營_nest-IMG_0237-已增強-雜訊減少.jpg",
+    images: [
+      "2026化營_nest-IMG_0237-已增強-雜訊減少.jpg",
+      "DSC_4454.jpg",
+      "DSC_4480.jpg",
+    ],
   },
   {
     id: "escape-night",
@@ -49,8 +53,8 @@ export const galleryCategories: GalleryCategory[] = [
     description:
       "結合劇情、線索與團隊推理的夜間解謎活動，讓學員在沉浸式任務中合作破關。",
     folder: "escape-night",
-    coverImage: null,
-    images: [],
+    coverImage: "2026化營_nest-0Q8A5283-已增強-雜訊減少.jpg",
+    images: ["2026化營_nest-0Q8A5283-已增強-雜訊減少.jpg"],
   },
   {
     id: "rpg",
@@ -67,8 +71,17 @@ export const galleryCategories: GalleryCategory[] = [
     description:
       "小隊員親自參與的大型化學實驗活動，從操作、觀察到討論，完整體驗實驗課程的核心魅力。",
     folder: "main-experiment",
-    coverImage: null,
-    images: [],
+    coverImage: "2026化營_nest-IMG_1251.jpg",
+    images: [
+      "2026化營_nest-IMG_1251.jpg",
+      "2026化營_nest-IMG_1304.jpg",
+      "2026化營_nest-IMG_1332.jpg",
+      "2026化營_nest-IMG_1354.jpg",
+      "2026化營_nest-IMG_1780.jpg",
+      "2026化營_nest-IMG_1810.jpg",
+      "Copy of P2040014.JPG",
+      "Copy of P2040086.JPG",
+    ],
   },
   {
     id: "token-competition",
@@ -76,8 +89,16 @@ export const galleryCategories: GalleryCategory[] = [
     description:
       "結合策略、知識與團隊合作的競賽活動，小隊需要運用判斷力與默契爭取最佳成果。",
     folder: "token-competition",
-    coverImage: null,
-    images: [],
+    coverImage: "2026化營_nest-IMG_2130-已增強-雜訊減少.jpg",
+    images: [
+      "2026化營_nest-IMG_2130-已增強-雜訊減少.jpg",
+      "DSC_0457.JPG",
+      "DSC_0986.JPG",
+      "IMG_9773.JPG",
+      "P1155366.jpg",
+      "P1155423-已增強-雜訊減少.jpg",
+      "P1155594-已增強-雜訊減少.jpg",
+    ],
   },
   {
     id: "souvenir-experiment",
@@ -85,8 +106,8 @@ export const galleryCategories: GalleryCategory[] = [
     description:
       "讓學員親手完成具有紀念價值的小型化學實驗作品，把營隊回憶帶回家。",
     folder: "souvenir-experiment",
-    coverImage: null,
-    images: [],
+    coverImage: "P2050267.JPG",
+    images: ["P2050267.JPG", "P2050271.JPG", "P2050315.JPG"],
   },
   {
     id: "party-night",

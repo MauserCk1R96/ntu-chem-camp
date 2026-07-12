@@ -6,7 +6,6 @@ const routes = [
   { path: "/about", priority: 0.8 },
   { path: "/program", priority: 0.8 },
   { path: "/faq", priority: 0.7 },
-  { path: "/tutorial", priority: 0.4 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

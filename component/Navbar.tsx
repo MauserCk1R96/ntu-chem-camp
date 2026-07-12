@@ -15,9 +15,6 @@ export default function Navbar() {
           <Link href="/program" className="transition hover:text-cyan-300">
             課程內容
           </Link>
-          <Link href="/tutorial" className="transition hover:text-cyan-300">
-            部署教學
-          </Link>
           <Link href="/faq" className="transition hover:text-cyan-300">
             常見問題
           </Link>

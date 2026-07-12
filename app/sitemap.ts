@@ -6,6 +6,7 @@ const routes = [
   { path: "/about", priority: 0.8 },
   { path: "/program", priority: 0.8 },
   { path: "/gallery", priority: 0.8 },
+  { path: "/registration", priority: 0.8 },
   { path: "/faq", priority: 0.7 },
 ];
 

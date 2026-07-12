@@ -77,7 +77,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-4 sm:flex-row">
           <a
-            href="#register"
+            href="/registration"
             className="rounded-full bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
           >
             立即報名
@@ -127,12 +127,10 @@ export default function Home() {
         </p>
 
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfR076Pp1ChtU1-3SQOgQ989M0kuM7ur9sgsv3Yysz5mksVUA/viewform?usp=sharing&ouid=103461614838581818619"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/registration"
           className="inline-block rounded-full bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
         >
-          前往報名表單
+          查看報名與退款須知
         </a>
       </section>
     </main>

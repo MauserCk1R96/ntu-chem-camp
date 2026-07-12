@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "活動內容",
+  description:
+    "台大化學營活動內容包含化學實驗課程、教授講座、學長姐交流與台大校園生活體驗。",
+  alternates: {
+    canonical: "/program",
+  },
+};
+
 const programs = [
   {
     title: "實驗課程",

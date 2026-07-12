@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "常見問題",
+  description:
+    "整理台大化學營報名資格、活動地點與高中生參加化學營隊前常見的疑問。",
+  alternates: {
+    canonical: "/faq",
+  },
+};
+
 const faqs = [
   {
     question: "誰可以報名？",

@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "關於營隊",
+  description:
+    "認識台大化學營的活動理念、籌辦單位與適合高中生參加的化學探索內容。",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 pb-24 pt-32 text-white">

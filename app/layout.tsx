@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  applicationName: "台大化學營",
+  applicationName: "NTU Chemistry Camp",
   title: {
     default: siteTitle,
     template: "%s｜台大化學營",
@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   description: siteDescription,
   keywords: siteKeywords,
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
     },
   },
   alternates: {

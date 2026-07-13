@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "聯絡資訊",
   description:
-    "台大化學營工作團隊聯絡方式，包含官方 Email、Instagram、Facebook 與主辦單位資訊。",
+    "化營工作團隊聯絡方式，包含官方 Email、Instagram、Facebook 與主辦單位資訊。",
   alternates: {
     canonical: "/contact",
   },
@@ -24,7 +24,7 @@ const contactMethods = [
   },
   {
     label: "Facebook",
-    value: "台大化學營 Facebook 粉絲專頁",
+    value: "化營Facebook 粉絲專頁",
     href: "https://www.facebook.com/profile.php?id=100064852116048",
     description: "可透過粉絲專頁私訊詢問一般活動問題。",
   },

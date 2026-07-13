@@ -41,8 +41,13 @@ export const galleryCategories: GalleryCategory[] = [
     description:
       "小隊員閱讀、整理並討論化學相關主題，練習用自己的方式理解與表達科學內容。",
     folder: "journal-discussion",
-    coverImage: null,
-    images: [],
+    coverImage: "IMG_6675.JPG",
+    images: [
+      "IMG_6675.JPG",
+      "IMG_6701.JPG",
+      "IMG_6824.JPG",
+      "IMG_7055.JPG",
+    ],
   },
   {
     id: "demo-experiment",
@@ -151,8 +156,8 @@ export const galleryCategories: GalleryCategory[] = [
     description:
       "記錄所有學員、隊輔與工作人員共同完成營隊後的珍貴時刻。",
     folder: "group-photo",
-    coverImage: null,
-    images: [],
+    coverImage: "20250208_Ethan_3.jpg",
+    images: ["20250208_Ethan_3.jpg", "IMG_7750.JPG", "IMG_7947.JPG"],
   },
 ];
 

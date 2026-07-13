@@ -1,102 +1,38 @@
-import type { Metadata } from "next";
-import { siteDescription, siteUrl } from "@/app/seo";
-
-export const metadata: Metadata = {
-  alternates: {
-    canonical: siteUrl,
-  },
-};
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "台大化學營",
-  alternateName: [
-    "NTU Chemistry Camp",
-    "台大化學營隊",
-    "國立臺灣大學化學營",
-    "高中生暑期化學營隊",
-  ],
-  url: siteUrl,
-};
-
 const highlights = [
   {
-    title: "化學實驗課程",
-    description:
-      "進入實驗室親手操作，觀察反應、顏色變化與材料性質，讓高中課本中的化學概念變得具體而有感。",
+    title: "實驗課程",
+    description: "親手操作高中課本看不到的化學實驗，從顏色、光、反應中理解分子世界。",
   },
   {
     title: "教授講座",
-    description:
-      "由國立臺灣大學化學系師長分享研究與產業案例，認識化學如何連結材料、能源、生命科學與日常生活。",
+    description: "認識化學在材料、能源、生命科學與產業中的應用。",
   },
   {
     title: "學長姐交流",
-    description:
-      "和台大化學系學生聊課程、社團、研究與大學生活，提前想像自己在大學探索自然科學的樣子。",
+    description: "聽台大化學系學生分享課業、社團、研究與大學生活。",
   },
 ];
-
-const eventJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  name: "台大化學營｜NTU Chemistry Camp",
-  description: siteDescription,
-  url: siteUrl,
-  startDate: "2027-01-25",
-  endDate: "2027-01-29",
-  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-  eventStatus: "https://schema.org/EventScheduled",
-  location: {
-    "@type": "Place",
-    name: "國立臺灣大學化學系",
-  },
-  organizer: {
-    "@type": "Organization",
-    name: "國立臺灣大學化學系學生",
-    url: siteUrl,
-  },
-};
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteJsonLd),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
-      />
-
       <section className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 text-center">
         <p className="mb-4 text-sm tracking-[0.3em] text-cyan-300">
           NTU CHEMISTRY CAMP
         </p>
 
         <h1 className="mb-6 text-5xl font-bold md:text-7xl">
-          台大化學營｜給高中生的化學探索營隊
+          台大化學營
         </h1>
 
-        <p className="mb-5 max-w-3xl text-lg leading-8 text-slate-300">
-          台大化學營由國立臺灣大學化學系學生籌辦，是為高中生設計的
-          暑期化學營隊。活動結合化學實驗課程、教授講座、學長姐交流與
-          台大校園生活體驗，帶你從課本走進真正的化學現場。
-        </p>
-
-        <p className="mb-8 max-w-3xl leading-8 text-slate-400">
-          如果你對化學與自然科學有興趣，想親手做實驗、認識大學研究、
-          聽見學長姐的真實經驗，也想在營隊中結交同樣熱愛探索的夥伴，
-          這裡會是一段適合開始想像未來的暑期營隊旅程。
+        <p className="mb-8 max-w-2xl text-lg leading-8 text-slate-300">
+          這個冬天，讓化學不只存在課本裡。
+          走進台大化學系，探索分子世界的無限可能。
         </p>
 
         <div className="flex flex-col gap-4 sm:flex-row">
           <a
-            href="/registration"
+            href="#register"
             className="rounded-full bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
           >
             立即報名
@@ -146,10 +82,11 @@ export default function Home() {
         </p>
 
         <a
-          href="/registration"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfR076Pp1ChtU1-3SQOgQ989M0kuM7ur9sgsv3Yysz5mksVUA/viewform?usp=sharing&ouid=103461614838581818619"
+          target="_blank"
           className="inline-block rounded-full bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
         >
-          查看報名與退款須知
+          前往報名表單
         </a>
       </section>
     </main>

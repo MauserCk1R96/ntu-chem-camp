@@ -13,7 +13,7 @@ export default function Navbar() {
             關於營隊
           </Link>
           <Link href="/program" className="transition hover:text-cyan-300">
-            課程內容
+            活動內容
           </Link>
           <Link href="/gallery" className="transition hover:text-cyan-300">
             活動照片

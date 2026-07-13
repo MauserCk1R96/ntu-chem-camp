@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { focusAreas } from "@/app/about/focus-data";
 
 export const metadata: Metadata = {
   title: "關於營隊",
@@ -8,13 +10,6 @@ export const metadata: Metadata = {
     canonical: "/about",
   },
 };
-
-const focusAreas = [
-  "化學實驗課程",
-  "專題與書報討論",
-  "小隊合作活動",
-  "學長姐交流",
-];
 
 const aboutParagraphs = [
   "台大化學營是由國立臺灣大學化學系學生籌辦，專為高中生設計的暑期營隊。我們希望透過實驗課程、專題討論、團隊活動與學長姐交流，帶領學員走進大學化學系的真實樣貌，重新認識化學不只是課本上的公式與反應式，而是一門能連結生活、研究、材料、能源與未來科技的學問。",
@@ -36,18 +31,21 @@ export default function AboutPage() {
         </h1>
 
         <p className="max-w-3xl text-lg leading-8 text-slate-300">
-          走進國立臺灣大學化學系，從實驗、討論、團隊任務與校園生活中，
-          看見化學和自己未來的更多可能。
+          走進化學系，從實驗、討論、團隊任務與校園生活中，探索自我。
         </p>
 
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {focusAreas.map((area) => (
-            <div
-              key={area}
-              className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-5 py-4 text-center font-semibold text-cyan-100"
+            <Link
+              key={area.slug}
+              href={`/about/${area.slug}`}
+              className="group rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-5 py-5 text-center font-semibold text-cyan-100 transition hover:-translate-y-1 hover:border-cyan-200/60 hover:bg-cyan-300/15 focus:outline-none focus:ring-2 focus:ring-cyan-200"
             >
-              {area}
-            </div>
+              <span className="block text-lg">{area.title}</span>
+              <span className="mt-2 block text-sm font-medium leading-6 text-slate-300 opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+                查看介紹
+              </span>
+            </Link>
           ))}
         </div>
 

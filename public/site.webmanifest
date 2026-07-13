@@ -1,0 +1,17 @@
+{
+  "name": "台大化學營",
+  "short_name": "台大化學營",
+  "description": "台大化學營由國立臺灣大學化學系學生籌辦，適合對化學與自然科學有興趣的高中生參加。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/site-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

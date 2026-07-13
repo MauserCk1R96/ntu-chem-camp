@@ -21,6 +21,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: "台大化學營",
   title: {
     default: siteTitle,
     template: "%s｜台大化學營",
@@ -35,7 +36,23 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  
+  alternates: {
+    canonical: siteUrl,
+  },
+  icons: {
+    icon: [
+      { url: "/site-icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/site-icon.svg",
+    apple: "/site-icon.svg",
+  },
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    title: "台大化學營",
+    capable: true,
+    statusBarStyle: "black-translucent",
+  },
   openGraph: {
     title: siteTitle,
     description: siteDescription,

@@ -41,11 +41,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/site-icon.svg", type: "image/svg+xml" },
+      { url: "/site-icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
       { url: "/favicon.ico", sizes: "any" },
     ],
-    shortcut: "/site-icon.svg",
-    apple: "/site-icon.svg",
+    shortcut: "/site-icon.png",
+    apple: "/apple-icon.png",
   },
   manifest: "/site.webmanifest",
   appleWebApp: {
@@ -67,8 +68,8 @@ export const metadata: Metadata = {
     description: siteDescription,
   },
   verification: {
-  google: "mRajCIbmLCvk97JZAf1w7vxTen5vNciBuVz61HkcFJ0",
-}
+    google: "mRajCIbmLCvk97JZAf1w7vxTen5vNciBuVz61HkcFJ0",
+  },
 };
 
 export default function RootLayout({

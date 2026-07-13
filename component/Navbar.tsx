@@ -5,7 +5,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 text-white">
         <Link href="/" className="font-bold tracking-wide text-cyan-300">
-          NTU Chem Camp
+          台大化學營
         </Link>
 
         <div className="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 text-sm text-slate-200">

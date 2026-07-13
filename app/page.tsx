@@ -3,8 +3,21 @@ import { siteDescription, siteUrl } from "@/app/seo";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/",
+    canonical: siteUrl,
   },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "台大化學營",
+  alternateName: [
+    "NTU Chemistry Camp",
+    "台大化學營隊",
+    "國立臺灣大學化學營",
+    "高中生暑期化學營隊",
+  ],
+  url: siteUrl,
 };
 
 const highlights = [
@@ -49,6 +62,12 @@ const eventJsonLd = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteJsonLd),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}

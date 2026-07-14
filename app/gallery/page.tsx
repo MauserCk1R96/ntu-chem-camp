@@ -6,7 +6,7 @@ import { galleryCategories } from "@/app/gallery/gallery-data";
 export const metadata: Metadata = {
   title: "活動照片｜台大化學營",
   description:
-    "瀏覽台大化學營的大地遊戲、書報討論、示範實驗、密室夜解謎、RPG、大實驗、籌碼競賽、紀念品實驗、晚會與大合照，了解營隊的活動內容與現場氛圍。",
+    "瀏覽台大化學營的活動地點、實驗室、大地遊戲、書報討論、示範實驗、密室夜解謎、RPG、大實驗、籌碼競賽、紀念品實驗、晚會與大合照，了解營隊的活動內容與現場氛圍。",
   alternates: {
     canonical: "/gallery",
   },
@@ -22,8 +22,8 @@ export default function GalleryPage() {
         <h1 className="mb-6 text-4xl font-bold md:text-6xl">活動照片</h1>
         <p className="max-w-3xl text-lg leading-8 text-slate-300">
           這裡依照活動分類整理台大化學營的精彩瞬間，讓高中生、家長與老師
-          可以從活動照片中看見高中生化學營隊的化學實驗、營隊活動、
-          團隊合作與大合照氛圍。
+          可以從活動照片中看見高中生化學營隊的活動地點、實驗室環境、
+          化學實驗、營隊活動、團隊合作與大合照氛圍。
         </p>
       </section>
 

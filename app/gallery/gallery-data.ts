@@ -1,6 +1,7 @@
 export type GalleryCategory = {
   id: string;
   title: string;
+  shortDescription: string;
   description: string;
   folder: string;
   coverImage: string | null;
@@ -19,6 +20,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "field-game",
     title: "大地遊戲",
+    shortDescription: "在闖關與任務中，小隊從陌生逐漸熟悉。",
     description:
       "透過戶外闖關與小隊合作，讓學員快速熟悉彼此，感受營隊的團隊氛圍。",
     folder: "field-game",
@@ -38,6 +40,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "journal-discussion",
     title: "書報討論",
+    shortDescription: "閱讀、整理與分享化學議題，用自己的方式說出科學。",
     description:
       "小隊員閱讀、整理並討論化學相關主題，練習用自己的方式理解與表達科學內容。",
     folder: "journal-discussion",
@@ -58,6 +61,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "demo-experiment",
     title: "示範實驗",
+    shortDescription: "近距離觀察學長姐操作，看見反應發生的瞬間。",
     description:
       "由專業的學長姐進行化學實驗示範，讓小隊員近距離觀察實驗操作、現象與背後原理。",
     folder: "demo-experiment",
@@ -78,6 +82,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "escape-night",
     title: "密室夜解謎",
+    shortDescription: "在線索、劇情與推理中，破解夜晚的任務。",
     description:
       "結合劇情、線索與團隊推理的夜間解謎活動，讓學員在沉浸式任務中合作破關。",
     folder: "escape-night",
@@ -97,6 +102,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "rpg",
     title: "RPG",
+    shortDescription: "成為故事中的角色，讓營隊任務串連成一段冒險。",
     description:
       "以角色扮演與劇情任務串連營隊活動，讓小隊員在遊戲中完成挑戰、累積團隊默契。",
     folder: "rpg",
@@ -115,6 +121,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "main-experiment",
     title: "大實驗",
+    shortDescription: "親手操作、觀察與討論，體驗化學實驗的核心魅力。",
     description:
       "小隊員親自參與的大型化學實驗活動，從操作、觀察到討論，完整體驗實驗課程的核心魅力。",
     folder: "main-experiment",
@@ -133,6 +140,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "token-competition",
     title: "籌碼競賽",
+    shortDescription: "用策略、知識與判斷力，替小隊爭取最佳成果。",
     description:
       "結合策略、知識與團隊合作的競賽活動，小隊需要運用判斷力與默契爭取最佳成果。",
     folder: "token-competition",
@@ -150,6 +158,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "souvenir-experiment",
     title: "紀念品實驗",
+    shortDescription: "把親手完成的化學作品，變成能帶回家的回憶。",
     description:
       "讓學員親手完成具有紀念價值的小型化學實驗作品，把營隊回憶帶回家。",
     folder: "souvenir-experiment",
@@ -169,6 +178,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "party-night",
     title: "晚會",
+    shortDescription: "把幾天累積的默契與回憶，一起點亮。",
     description:
       "營隊中最熱鬧的夜晚，包含表演、互動與小隊活動，凝聚大家幾天累積下來的情感與回憶。",
     folder: "party-night",
@@ -187,6 +197,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     id: "group-photo",
     title: "大合照",
+    shortDescription: "記錄所有人共同完成這段旅程的瞬間。",
     description:
       "記錄所有學員、隊輔與工作人員共同完成營隊後的珍貴時刻。",
     folder: "group-photo",
@@ -207,8 +218,40 @@ export function getGalleryImageAlt(category: GalleryCategory, index: number) {
     return "台大化學營大合照";
   }
 
+  if (category.id === "field-game") {
+    return `台大化學營大地遊戲活動照片 ${index + 1}`;
+  }
+
+  if (category.id === "journal-discussion") {
+    return `台大化學營書報討論照片 ${index + 1}`;
+  }
+
+  if (category.id === "demo-experiment") {
+    return `台大化學營示範實驗照片 ${index + 1}`;
+  }
+
+  if (category.id === "escape-night") {
+    return `台大化學營密室夜解謎活動照片 ${index + 1}`;
+  }
+
+  if (category.id === "rpg") {
+    return `台大化學營 RPG 活動照片 ${index + 1}`;
+  }
+
   if (category.id === "main-experiment") {
     return `台大化學營大實驗學員操作照片 ${index + 1}`;
+  }
+
+  if (category.id === "token-competition") {
+    return `台大化學營籌碼競賽照片 ${index + 1}`;
+  }
+
+  if (category.id === "souvenir-experiment") {
+    return `台大化學營紀念品實驗照片 ${index + 1}`;
+  }
+
+  if (category.id === "party-night") {
+    return `台大化學營晚會活動照片 ${index + 1}`;
   }
 
   return `台大化學營${category.title}活動照片 ${index + 1}`;

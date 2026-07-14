@@ -21,20 +21,26 @@ const aboutParagraphs = [
 
 const venueHighlights = [
   {
-    title: "系館與活動地點",
+    title: "台大化學系館：積學館",
     label: "DEPARTMENT",
     image: "/gallery/activity-location/department.jpg",
     alt: "台大化學營活動地點與系館照片",
-    description:
-      "營隊主要活動場域位於國立臺灣大學化學系，學員會在系館與校園空間中參與課程、討論與團隊活動，實際感受大學化學系的學習環境。",
+    description: [
+      "積學館位於台大校園腹地中心，鄰近醉月湖與小福樓，生活機能便利。",
+      "一、二樓主要為學生活動空間、教室、討論室、辦公室及講堂；三樓至七樓為各教授研究室、實驗室；地下一樓為貴重儀器室。",
+      "化學營活動範圍以一、二樓為主，有充足的活動空間及完善的安全設施，能支援營隊課程、討論與團隊活動需求。",
+    ],
   },
   {
-    title: "實驗室環境",
+    title: "化學實驗室：思亮館",
     label: "LABORATORY",
     image: "/gallery/laboratory/Laboratorty.jpg",
     alt: "台大化學營實驗室環境照片",
-    description:
-      "實驗相關課程會安排在適合的實驗空間中進行，讓學員在安全規範與工作人員協助下，近距離認識化學實驗室的設備、操作方式與學習氛圍。",
+    description: [
+      "思亮館為紀念 1951 至 1960 年台大校長錢思亮而命名。錢校長為理化專家，因此以校長之名命名理學院大樓紀念。",
+      "自民國 73 年落成至今，思亮館為所有自然科學相關學系學生學習基礎化學實驗的地方，其中一、二、三樓分別為基礎化學實驗課程中的普通、分析、有機化學實驗室。",
+      "每間實驗室均設有完善的實驗設施及安全器材，讓學員能在合適的環境中認識化學實驗的操作方式與學習氛圍。",
+    ],
   },
 ];
 
@@ -111,9 +117,11 @@ export default function AboutPage() {
                   <h3 className="mb-4 text-2xl font-bold text-cyan-100">
                     {item.title}
                   </h3>
-                  <p className="leading-8 text-slate-300">
-                    {item.description}
-                  </p>
+                  <div className="space-y-3 leading-8 text-slate-300">
+                    {item.description.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}

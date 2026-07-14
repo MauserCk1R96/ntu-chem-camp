@@ -17,24 +17,6 @@ export type GalleryCategory = {
  */
 export const galleryCategories: GalleryCategory[] = [
   {
-    id: "activity-location",
-    title: "系館與活動地點",
-    description:
-      "活動主要場域位於國立臺灣大學化學系，讓學員走進系館空間，感受大學化學系的學習環境。",
-    folder: "activity-location",
-    coverImage: "department.jpg",
-    images: ["department.jpg"],
-  },
-  {
-    id: "laboratory",
-    title: "實驗室環境",
-    description:
-      "營隊實驗課程會在合適的實驗空間中進行，學員能近距離認識化學實驗室的設備與學習氛圍。",
-    folder: "laboratory",
-    coverImage: "Laboratorty.jpg",
-    images: ["Laboratorty.jpg"],
-  },
-  {
     id: "field-game",
     title: "大地遊戲",
     description:
@@ -221,14 +203,6 @@ export function getGalleryImagePath(
 }
 
 export function getGalleryImageAlt(category: GalleryCategory, index: number) {
-  if (category.id === "activity-location") {
-    return "台大化學營活動地點與系館照片";
-  }
-
-  if (category.id === "laboratory") {
-    return "台大化學營實驗室環境照片";
-  }
-
   if (category.id === "group-photo") {
     return "台大化學營大合照";
   }

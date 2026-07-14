@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { focusAreas } from "@/app/about/focus-data";
 
@@ -16,6 +17,25 @@ const aboutParagraphs = [
   "在營隊中，學員將不只是坐在教室裡聽課，而是親自參與多元的活動設計。從大實驗、紀念品實驗到示範實驗，學員能近距離觀察專業的實驗操作，也能在安全的環境中動手體驗化學現象背後的原理；透過書報討論，學員將練習閱讀、整理與表達科學內容，學習如何用自己的方式理解一個化學議題。",
   "除了學術與實驗內容，台大化學營也重視團隊合作與營隊回憶的建立。大地遊戲、密室夜解謎、RPG、籌碼競賽與晚會等活動，讓來自不同學校的高中生在小隊中一起思考、合作、挑戰任務，逐漸累積默契，也在過程中認識志同道合的朋友。",
   "我們希望每位參與者都能在這幾天裡，看見化學更立體的樣貌：它可以是嚴謹的實驗操作，也可以是充滿創意的問題解決；可以是安靜的閱讀與討論，也可以是熱鬧的團隊挑戰。無論你已經對化學充滿興趣，或只是正在探索未來的方向，台大化學營都希望成為你接近科學、認識大學生活，並發現自己可能性的起點。",
+];
+
+const venueHighlights = [
+  {
+    title: "系館與活動地點",
+    label: "DEPARTMENT",
+    image: "/gallery/activity-location/department.jpg",
+    alt: "台大化學營活動地點與系館照片",
+    description:
+      "營隊主要活動場域位於國立臺灣大學化學系，學員會在系館與校園空間中參與課程、討論與團隊活動，實際感受大學化學系的學習環境。",
+  },
+  {
+    title: "實驗室環境",
+    label: "LABORATORY",
+    image: "/gallery/laboratory/Laboratorty.jpg",
+    alt: "台大化學營實驗室環境照片",
+    description:
+      "實驗相關課程會安排在適合的實驗空間中進行，讓學員在安全規範與工作人員協助下，近距離認識化學實驗室的設備、操作方式與學習氛圍。",
+  },
 ];
 
 export default function AboutPage() {
@@ -56,6 +76,49 @@ export default function AboutPage() {
             </p>
           ))}
         </article>
+
+        <section className="mt-16">
+          <p className="mb-3 text-sm font-semibold tracking-[0.28em] text-cyan-300">
+            CAMP SPACES
+          </p>
+          <h2 className="mb-5 text-3xl font-bold md:text-4xl">
+            活動場域
+          </h2>
+          <p className="mb-8 max-w-3xl text-lg leading-8 text-slate-300">
+            從系館到實驗室，學員會在真實的大學化學系環境中認識課程、
+            實驗與校園生活。
+          </p>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {venueHighlights.map((item) => (
+              <article
+                key={item.title}
+                className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04]"
+              >
+                <div className="relative aspect-[4/3] bg-slate-900">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    sizes="(min-width: 768px) 45vw, 90vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 md:p-8">
+                  <p className="mb-3 text-sm font-semibold tracking-[0.24em] text-cyan-300">
+                    {item.label}
+                  </p>
+                  <h3 className="mb-4 text-2xl font-bold text-cyan-100">
+                    {item.title}
+                  </h3>
+                  <p className="leading-8 text-slate-300">
+                    {item.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       </section>
     </main>
   );

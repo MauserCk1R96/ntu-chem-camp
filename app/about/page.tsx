@@ -65,10 +65,12 @@ export default function AboutPage() {
             <Link
               key={area.slug}
               href={`/about/${area.slug}`}
-              className="group rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-5 py-5 text-center font-semibold text-cyan-100 transition hover:-translate-y-1 hover:border-cyan-200/60 hover:bg-cyan-300/15 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+              className="group flex h-28 flex-col items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-5 text-center font-semibold text-cyan-100 transition hover:-translate-y-1 hover:border-cyan-200/60 hover:bg-cyan-300/15 focus:outline-none focus:ring-2 focus:ring-cyan-200"
             >
-              <span className="block text-lg">{area.title}</span>
-              <span className="mt-2 block text-sm font-medium leading-6 text-slate-300 opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+              <span className="block text-lg transition-transform duration-300 group-hover:-translate-y-3 group-focus-visible:-translate-y-3">
+                {area.title}
+              </span>
+              <span className="mt-2 block translate-y-2 text-sm font-medium leading-6 text-slate-300 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
                 查看介紹
               </span>
             </Link>

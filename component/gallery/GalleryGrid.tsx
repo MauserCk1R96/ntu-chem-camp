@@ -110,9 +110,6 @@ export default function GalleryGrid({ category }: GalleryGridProps) {
                   className="object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-110"
                 />
               </span>
-              <figcaption className="px-4 py-3 text-sm text-slate-300">
-                {getGalleryImageAlt(category, index)}
-              </figcaption>
             </button>
           </figure>
         ))}

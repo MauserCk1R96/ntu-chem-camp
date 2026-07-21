@@ -58,21 +58,6 @@ export default function ProgramPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 max-w-6xl rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-10">
-        <p className="mb-4 text-sm font-semibold tracking-[0.28em] text-cyan-200">
-          JOURNEY
-        </p>
-        <h2 className="mb-5 text-3xl font-bold md:text-4xl">
-          不只是活動清單，而是一段完整的營隊旅程
-        </h2>
-        <p className="text-lg leading-9 text-slate-200">
-          從大地遊戲的破冰開始，到書報討論與實驗課程中的科學探索，
-          再到 RPG、密室夜解謎與籌碼競賽中的團隊挑戰，台大化學營希望
-          讓學員在不同活動中逐步累積知識、默契與回憶。最後透過晚會與
-          大合照，將幾天的共同經歷收束成一段真正屬於營隊的故事。
-        </p>
-      </section>
-
       <section className="mx-auto mt-20 max-w-6xl">
         <div className="mb-8">
           <p className="mb-3 text-sm font-semibold tracking-[0.28em] text-cyan-300">

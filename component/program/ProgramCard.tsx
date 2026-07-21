@@ -6,7 +6,7 @@ type ProgramCardProps = {
 
 export default function ProgramCard({ item }: ProgramCardProps) {
   return (
-    <article className="group flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_0_35px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/70 hover:shadow-[0_0_30px_rgba(34,211,238,0.16)]">
+    <article className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_0_35px_rgba(15,23,42,0.35)]">
       <div className="mb-6 flex items-start justify-between gap-4">
         <div>
           <p className="mb-3 text-sm font-semibold tracking-[0.2em] text-cyan-300">
@@ -27,7 +27,7 @@ export default function ProgramCard({ item }: ProgramCardProps) {
         {item.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-white/10 bg-slate-900/80 px-3 py-1 text-sm text-slate-300 transition group-hover:border-cyan-300/30 group-hover:text-cyan-100"
+            className="rounded-full border border-white/10 bg-slate-900/80 px-3 py-1 text-sm text-slate-300"
           >
             {tag}
           </span>

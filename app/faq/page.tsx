@@ -64,9 +64,7 @@ export default function FaqPage() {
             常見問題
           </h1>
 
-          <p className="text-lg leading-8 text-slate-300">
-            整理報名前常見的疑問，包含先備知識、錄取方式、分隊安排與臨時取消等資訊。
-          </p>
+
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">

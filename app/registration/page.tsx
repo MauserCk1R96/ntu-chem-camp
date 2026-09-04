@@ -15,6 +15,18 @@ const registrationNotes = [
   "本活動雖已採線上報名，但仍須列印家長同意書以及防疫與實驗室安全同意書，填妥資料並由監護人簽章，於報到時繳交。",
 ];
 
+const scheduleItems = [
+  { date: "9/14", title: "開始報名" },
+  { date: "10/31", title: "報名截止" },
+  { date: "11/5", title: "公告結果與匯款通知" },
+  { date: "11/19", title: "匯款截止" },
+  { date: "11/20", title: "通知備取" },
+  { date: "11/24", title: "備取匯款截止" },
+  { date: "11/28", title: "第二次備取通知" },
+  { date: "12/3", title: "報名完全截止" },
+  { date: "12/5", title: "繳費完全截止" },
+];
+
 const subsidyRequirements = [
   "低收入戶或其他經濟困難證明",
   "教師或社工人員推薦函",
@@ -30,11 +42,11 @@ const subsidyPledges = [
 const paymentDeadlines = [
   {
     label: "正取生",
-    value: "12/19（二）",
+    value: "11/19 匯款截止",
   },
   {
     label: "備取生",
-    value: "待通知後請依照信件內規定的時間繳費。",
+    value: "11/24 備取匯款截止；第二次備取請依 11/28 通知與信件說明辦理，最晚至 12/5 繳費完全截止。",
   },
 ];
 
@@ -111,7 +123,23 @@ export default function RegistrationPage() {
       </section>
 
       <div className="mx-auto mt-14 grid max-w-5xl gap-8">
-        <InfoCard title="一、線上報名">
+        <InfoCard title="一、重要時程">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {scheduleItems.map((item) => (
+              <div
+                key={`${item.date}-${item.title}`}
+                className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5"
+              >
+                <p className="text-2xl font-bold text-cyan-100">
+                  {item.date}
+                </p>
+                <p className="mt-2 leading-7 text-slate-300">{item.title}</p>
+              </div>
+            ))}
+          </div>
+        </InfoCard>
+
+        <InfoCard title="二、線上報名">
           <div className="space-y-5 leading-8 text-slate-300">
             <p>本活動採線上報名。請於 Google 表單中填妥真實資料並送出，即完成報名。</p>
             <p>
@@ -119,7 +147,8 @@ export default function RegistrationPage() {
               （附於報名簡章後）再開始填寫表單。
             </p>
             <p>
-              報名表單開始時間為 11/19，至 12/9 23:59 截止報名。
+              報名表單開始時間為 9/14，至 10/31 截止報名。備取與後續遞補流程
+              依公告及信件通知辦理，12/3 為報名完全截止日。
             </p>
             <ul className="space-y-3">
               {registrationNotes.map((note) => (
@@ -131,7 +160,7 @@ export default function RegistrationPage() {
           </div>
         </InfoCard>
 
-        <InfoCard title="二、報名費用說明">
+        <InfoCard title="三、報名費用說明">
           <div className="space-y-5 leading-8 text-slate-300">
             <p>
               報名費用為
@@ -147,7 +176,7 @@ export default function RegistrationPage() {
           </div>
         </InfoCard>
 
-        <InfoCard title="三、清寒生補助計畫">
+        <InfoCard title="四、清寒生補助計畫">
           <div className="space-y-5 leading-8 text-slate-300">
             <p>
               參加者免交報名費，唯來回交通費及營期外費用須自理。
@@ -183,7 +212,7 @@ export default function RegistrationPage() {
           </div>
         </InfoCard>
 
-        <InfoCard title="四、報名確認">
+        <InfoCard title="五、報名確認">
           <div className="space-y-5 leading-8 text-slate-300">
             <p>
               主辦單位收到報名表單後，將發送確認郵件至報名表單上的聯絡電子信箱。
@@ -202,7 +231,7 @@ export default function RegistrationPage() {
           </div>
         </InfoCard>
 
-        <InfoCard title="五、繳費須知">
+        <InfoCard title="六、繳費須知">
           <div className="space-y-8 leading-8 text-slate-300">
             <p className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5 font-semibold text-cyan-100">
               請詳閱須知以免自身權益受損。
@@ -244,8 +273,6 @@ export default function RegistrationPage() {
                 <dd>國立臺灣大學化學系學生會</dd>
                 <dt className="font-semibold text-cyan-200">分局</dt>
                 <dd>郵局 700</dd>
-                <dt className="font-semibold text-cyan-200">帳號</dt>
-                <dd>0001236 0539539</dd>
               </dl>
               <p className="mt-4 text-sm leading-7 text-slate-400">
                 ※ 請注意，戶名不是臺大化學營。
@@ -260,8 +287,9 @@ export default function RegistrationPage() {
                 則視為未繳費，取消其錄取資格。
               </p>
               <p className="mt-4">
-                下方的學員錄取報到表單也請於 12/19（二）23:59 前填寫完畢，
-                填寫完畢才視為完成報到。請自行注意郵局或銀行營業時間。
+                下方的學員錄取報到表單也請依錄取信件規定期限填寫完畢。
+                填寫完畢才視為完成報到，所有繳費流程最晚至 12/5 完全截止。
+                請自行注意郵局或銀行營業時間。
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 {paymentForms.map((form) => (
@@ -280,7 +308,7 @@ export default function RegistrationPage() {
           </div>
         </InfoCard>
 
-        <InfoCard title="六、退費規定">
+        <InfoCard title="七、退費規定">
           <p className="mb-5 leading-8 text-slate-300">
             相關規定詳列如下，請詳細閱讀，參與本營隊者視為同意下列事項。
           </p>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "報名資訊、繳費須知與退款規定",
   description:
-    "了解台大化學營線上報名方式、報名費用、繳費期限、匯款資訊、清寒生補助計畫與營隊退費相關規定。",
+    "了解台大化學營報名簡章、線上報名方式、報名費用、繳費期限、清寒生補助計畫與營隊退費相關規定。",
   alternates: {
     canonical: "/registration",
   },
@@ -47,17 +47,6 @@ const paymentDeadlines = [
   {
     label: "備取生",
     value: "11/24 備取匯款截止；第二次備取請依 11/28 通知與信件說明辦理，最晚至 12/5 繳費完全截止。",
-  },
-];
-
-const paymentForms = [
-  {
-    label: "繳費資訊表單",
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSdUgNrZbM9b7rbdZY3c5bnmM_qWaUIhF1WNUxPgx8XGPRboLg/viewform",
-  },
-  {
-    label: "學員錄取報到表單",
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSeVd1qB3b8SXq-oudquIKT5wg_QMKXYRBLOkvdOaUqR9Q-6wA/viewform",
   },
 ];
 
@@ -142,13 +131,19 @@ export default function RegistrationPage() {
         <InfoCard title="二、線上報名">
           <div className="space-y-5 leading-8 text-slate-300">
             <p>本活動採線上報名。請於 Google 表單中填妥真實資料並送出，即完成報名。</p>
+            <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5">
+              <h3 className="mb-2 text-xl font-bold text-white">報名簡章</h3>
+              <p>
+                報名前請務必詳閱報名簡章，並建議先閱讀報名表單題目
+                （附於報名簡章後）再開始填寫表單。
+              </p>
+              <p className="mt-3 text-sm leading-7 text-slate-400">
+                報名簡章連結將於正式公告後更新，請以本網站與官方社群公告為準。
+              </p>
+            </div>
             <p>
-              報名前請務必詳閱報名簡章，並建議先閱讀報名表單題目
-              （附於報名簡章後）再開始填寫表單。
-            </p>
-            <p>
-              報名表單開始時間為 9/14，至 10/31 截止報名。備取與後續遞補流程
-              依公告及信件通知辦理，12/3 為報名完全截止日。
+              報名時間為 9/14 起至 10/31 截止。備取與後續遞補流程依公告及
+              信件通知辦理，12/3 為報名完全截止日。
             </p>
             <ul className="space-y-3">
               {registrationNotes.map((note) => (
@@ -170,8 +165,8 @@ export default function RegistrationPage() {
             <p>
               2027 化學營為日歸營，將不提供住宿，營隊期間只有白天時會一同
               參與化學營的活動。居住於外縣市或基於其他原因而有住宿需求之學員，
-              我們會於報名時另行調查協助辦理住宿。若有任何疑問，可以私訊粉專
-              或寄 e-mail 詢問。
+              我們會於報名時另行調查協助辦理住宿；代訂住宿費用與合計金額
+              以錄取信件通知為準。若有任何疑問，可以私訊粉專或寄 e-mail 詢問。
             </p>
           </div>
         </InfoCard>
@@ -243,8 +238,8 @@ export default function RegistrationPage() {
                 一般報名費用為
                 <strong className="mx-1 text-cyan-200">7500 元</strong>
                 ，申請代訂住宿者共
-                <strong className="mx-1 text-cyan-200">9500 元</strong>
-                （住宿費用 2000 元），詳情請見錄取信件通知。
+                <strong className="mx-1 text-cyan-200">10300 元</strong>
+                ，詳情請見錄取信件通知。
               </p>
             </div>
 
@@ -291,19 +286,6 @@ export default function RegistrationPage() {
                 填寫完畢才視為完成報到，所有繳費流程最晚至 12/5 完全截止。
                 請自行注意郵局或銀行營業時間。
               </p>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                {paymentForms.map((form) => (
-                  <a
-                    key={form.href}
-                    href={form.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full bg-cyan-400 px-6 py-3 text-center font-semibold text-slate-950 transition hover:bg-cyan-300"
-                  >
-                    {form.label}
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
         </InfoCard>

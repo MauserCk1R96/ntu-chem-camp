@@ -15,6 +15,9 @@ const registrationNotes = [
   "本活動雖已採線上報名，但仍須列印家長同意書以及防疫與實驗室安全同意書，填妥資料並由監護人簽章，於報到時繳交。",
 ];
 
+const registrationFormUrl = "https://forms.gle/roTy1K36Jps2N1c27";
+const subsidyFormUrl = "https://forms.gle/wd1rfRsHfGZpGNhU6";
+
 const scheduleItems = [
   { date: "9/14", title: "開始報名" },
   { date: "10/31", title: "報名截止" },
@@ -95,7 +98,7 @@ export default function RegistrationPage() {
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfR076Pp1ChtU1-3SQOgQ989M0kuM7ur9sgsv3Yysz5mksVUA/viewform?usp=sharing&ouid=103461614838581818619"
+            href={registrationFormUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-cyan-400 px-8 py-3 text-center font-semibold text-slate-950 transition hover:bg-cyan-300"
@@ -189,6 +192,14 @@ export default function RegistrationPage() {
                 ))}
               </ol>
             </div>
+            <a
+              href={subsidyFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+            >
+              前往清寒補助申請表單
+            </a>
             <div className="space-y-3 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5">
               <p>※ (1)、(2) 請拍照後上傳於表單中，檔名須為 PDF 檔。</p>
               <p>※ 由於需在表單中上傳檔案，請先登入 Google 帳戶再填寫表單。</p>

@@ -35,7 +35,7 @@ const scheduleItems = [
 
 const requiredPaperDocuments = [
   "家長／監護人同意書",
-  "防疫與實驗室安全同意書",
+  "實驗室安全同意書",
 ];
 
 const subsidyRequirements = [
@@ -390,7 +390,7 @@ export default function RegistrationPage() {
                     key={step}
                     className="grid grid-cols-[2.5rem_1fr] gap-3 rounded-2xl bg-white/5 px-4 py-4"
                   >
-                    <span className="font-semibold text-cyan-200">
+                    <span className="font-semibold text-white">
                       {index + 1}.
                     </span>
                     <span>{step}</span>
@@ -414,7 +414,7 @@ export default function RegistrationPage() {
                 key={rule}
                 className="grid grid-cols-[2.5rem_1fr] gap-3 rounded-2xl bg-white/5 px-4 py-3"
               >
-                <span className="font-semibold text-cyan-200">
+                <span className="font-semibold text-white">
                   {index + 1}.
                 </span>
                 <span>{rule}</span>

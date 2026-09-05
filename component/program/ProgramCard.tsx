@@ -210,9 +210,6 @@ export default function ProgramCard({ item }: ProgramCardProps) {
             ) : null}
           </div>
           <h2 className="text-2xl font-bold text-white">{item.title}</h2>
-          <p className="mt-2 text-sm font-medium text-slate-400">
-            {item.category}
-          </p>
         </div>
         <span
           className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-cyan-200 ${

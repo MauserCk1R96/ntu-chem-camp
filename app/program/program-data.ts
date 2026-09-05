@@ -4,7 +4,6 @@ export type ProgramItem = {
   description: string;
   tags: string[];
   icon: string;
-  category: "學術／實作" | "團隊／任務" | "營隊回憶";
   featured?: boolean;
 };
 
@@ -16,7 +15,6 @@ export const programItems: ProgramItem[] = [
       "營隊前期會以小隊形式進行闖關與合作任務，讓大家在活動中熟悉彼此，也先建立之後一起完成任務需要的默契。",
     tags: ["團隊合作", "破冰活動", "戶外闖關"],
     icon: "FIELD",
-    category: "團隊／任務",
   },
   {
     title: "書報討論",
@@ -25,7 +23,6 @@ export const programItems: ProgramItem[] = [
       "由工作人員帶領閱讀指定主題的科普或學術文章，整理重點、提出問題，再透過小組討論交換彼此的想法。",
     tags: ["科學閱讀", "小組討論", "表達訓練"],
     icon: "READ",
-    category: "學術／實作",
   },
   {
     title: "示範實驗",
@@ -34,7 +31,6 @@ export const programItems: ProgramItem[] = [
       "由工作人員進行示範操作，讓學員在安全距離觀察反應過程與現象，並搭配說明了解背後的化學原理。",
     tags: ["實驗觀察", "示範操作", "化學現象"],
     icon: "DEMO",
-    category: "學術／實作",
   },
   {
     title: "密室夜解謎",
@@ -43,7 +39,6 @@ export const programItems: ProgramItem[] = [
       "夜間活動會以劇情與關卡串連任務，小隊需要搜尋線索、討論可能的解法，並共同完成指定挑戰。",
     tags: ["推理解謎", "劇情任務", "團隊合作"],
     icon: "LOCK",
-    category: "團隊／任務",
   },
   {
     title: "RPG",
@@ -52,7 +47,6 @@ export const programItems: ProgramItem[] = [
       "學員會依照角色設定與任務線索，在活動過程中進行互動、做出選擇，並與隊友合作完成各階段任務。",
     tags: ["角色扮演", "劇情互動", "任務挑戰"],
     icon: "RPG",
-    category: "團隊／任務",
   },
   {
     title: "大實驗",
@@ -61,7 +55,6 @@ export const programItems: ProgramItem[] = [
       "學員會在工作人員協助下進行實驗，從操作、觀察現象到整理結果與討論，實際接觸大學化學實驗的流程。",
     tags: ["實驗操作", "科學探究", "小隊合作"],
     icon: "LAB",
-    category: "學術／實作",
     featured: true,
   },
   {
@@ -71,7 +64,6 @@ export const programItems: ProgramItem[] = [
       "各小隊會透過不同任務取得或使用籌碼，並根據活動規則安排策略，在競賽中考驗團隊討論與臨場判斷。",
     tags: ["策略競賽", "團隊決策", "小隊對抗"],
     icon: "CHIP",
-    category: "團隊／任務",
   },
   {
     title: "紀念品實驗",
@@ -80,7 +72,6 @@ export const programItems: ProgramItem[] = [
       "透過簡單的實驗或製作活動，完成屬於自己的營隊紀念品，將實作成果帶回家。",
     tags: ["動手製作", "營隊紀念", "化學作品"],
     icon: "MAKE",
-    category: "學術／實作",
   },
   {
     title: "晚會",
@@ -89,7 +80,6 @@ export const programItems: ProgramItem[] = [
       "晚會包含表演、互動與小隊活動，讓各隊一起完成營期間最後的大型團體活動。",
     tags: ["表演互動", "團體活動", "晚會"],
     icon: "SHOW",
-    category: "營隊回憶",
   },
   {
     title: "大合照",
@@ -98,7 +88,6 @@ export const programItems: ProgramItem[] = [
       "營隊結束前進行全體合照，記錄大家一起完成營期活動的最後一個畫面。",
     tags: ["全體合照", "營隊紀念", "最後一天"],
     icon: "ALL",
-    category: "營隊回憶",
   },
 ];
 

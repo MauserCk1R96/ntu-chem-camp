@@ -18,6 +18,11 @@ export const homeHero = {
     alt: "台大化學營本屆 Cyberpunk 主視覺",
     caption: "本屆主視覺",
   },
+  atmosphereImage: {
+    src: "/gallery/activity-location/cyber-molecule.jpg",
+    alt: "積學館內霓虹分子裝置，呈現台大化學營 Cyberpunk 主題氛圍",
+    caption: "積學館霓虹分子",
+  },
 };
 
 export const homeHighlights = [

@@ -55,21 +55,21 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-[2rem] border border-cyan-300/30 bg-white/[0.04] shadow-[0_0_45px_rgba(34,211,238,0.18)]">
             <div className="relative aspect-[3/2] bg-slate-900">
               <Image
-                src={homeHero.keyVisual.src}
-                alt={homeHero.keyVisual.alt}
+                src={homeHero.atmosphereImage.src}
+                alt={homeHero.atmosphereImage.alt}
                 fill
                 priority
                 sizes="(min-width: 768px) 50vw, 92vw"
-                className="object-cover object-center"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/5 to-slate-950/20" />
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
               <p className="text-sm font-semibold tracking-[0.24em] text-cyan-200">
-                {homeHero.keyVisual.caption}
+                {homeHero.atmosphereImage.caption}
               </p>
               <p className="mt-2 max-w-md text-sm leading-6 text-slate-200">
-                以 Cyberpunk 視覺描繪實驗、分子與未來科技交織的營隊想像。
+                在霓虹與分子交錯的空間中，探索化學的另一種想像。
               </p>
             </div>
           </div>

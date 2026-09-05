@@ -9,25 +9,33 @@ export const metadata: Metadata = {
   },
 };
 
-const registrationNotes = [
-  "由於需在表單中上傳個人照片，請先登入 Google 帳戶再填寫表單。",
-  "請務必取得監護人同意再報名本活動。",
-  "本活動雖已採線上報名，但仍須列印家長同意書以及防疫與實驗室安全同意書，填妥資料並由監護人簽章，於報到時繳交。",
-];
-
 const registrationFormUrl = "https://forms.gle/roTy1K36Jps2N1c27";
 const subsidyFormUrl = "https://forms.gle/wd1rfRsHfGZpGNhU6";
 
+const registrationPeriod = {
+  start: "9/14",
+  end: "10/31",
+};
+
 const scheduleItems = [
-  { date: "9/14", title: "開始報名" },
-  { date: "10/31", title: "報名截止" },
-  { date: "11/5", title: "公告結果與匯款通知" },
-  { date: "11/19", title: "匯款截止" },
-  { date: "11/20", title: "通知備取" },
-  { date: "11/24", title: "備取匯款截止" },
-  { date: "11/28", title: "第二次備取通知" },
-  { date: "12/3", title: "報名完全截止" },
-  { date: "12/5", title: "繳費完全截止" },
+  { date: "9/14", title: "開始報名", type: "APPLICATION" },
+  { date: "10/31", title: "報名截止", type: "APPLICATION" },
+  {
+    date: "11/5",
+    title: "公告錄取結果",
+    detail: "並寄送正取生繳費通知",
+    type: "RESULT",
+  },
+  { date: "11/19", title: "正取生繳費截止", type: "PAYMENT" },
+  { date: "11/20", title: "第一梯次備取通知", type: "WAITLIST" },
+  { date: "11/24", title: "第一梯次備取繳費截止", type: "PAYMENT" },
+  { date: "11/28", title: "第二梯次備取通知", type: "WAITLIST" },
+  { date: "12/5", title: "最終繳費截止", type: "PAYMENT" },
+];
+
+const requiredPaperDocuments = [
+  "家長／監護人同意書",
+  "防疫與實驗室安全同意書",
 ];
 
 const subsidyRequirements = [
@@ -42,23 +50,48 @@ const subsidyPledges = [
   "營期結束一個月內，須繳交 1000 字心得作為效能評估之用，心得將不會公開。",
 ];
 
+const feeOptions = [
+  {
+    label: "一般報名",
+    amount: "NT$7,500",
+  },
+  {
+    label: "含代訂住宿",
+    amount: "NT$10,300",
+  },
+];
+
 const paymentDeadlines = [
   {
     label: "正取生",
-    value: "11/19 匯款截止",
+    date: "11/19",
+    description: "繳費截止",
   },
   {
-    label: "備取生",
-    value: "11/24 備取匯款截止；第二次備取請依 11/28 通知與信件說明辦理，最晚至 12/5 繳費完全截止。",
+    label: "第一梯次備取",
+    date: "11/24",
+    description: "繳費截止",
+  },
+  {
+    label: "第二梯次備取",
+    date: "11/28",
+    description: "錄取通知",
   },
 ];
 
 const paymentConfirmationSteps = [
-  "完成匯款後，請填寫繳費確認表單。",
-  "表單中請填寫報名者資料及匯款資訊，例如轉帳帳號末五碼。",
-  "工作人員核對完成後，會更新錄取／繳費狀態。",
-  "如超過數個工作天仍未更新，請透過網站聯絡方式與我們確認。",
+  "完成匯款",
+  "填寫繳費確認表單",
+  "工作人員核對款項",
+  "網站錄取名單更新繳費狀態",
 ];
+
+const paymentInfo = {
+  accountName: "國立臺灣大學化學系學生會",
+  institution: "中華郵政",
+  bankCode: "700",
+  accountNumber: "請依錄取信件通知為準",
+};
 
 const refundRules = [
   "營隊開始 21 日前（含）取消參加者，扣除必要行政費用後，退還報名費九成。",
@@ -129,10 +162,20 @@ export default function RegistrationPage() {
                 key={`${item.date}-${item.title}`}
                 className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5"
               >
+                <p className="mb-3 text-xs font-semibold tracking-[0.18em] text-cyan-300">
+                  {item.type}
+                </p>
                 <p className="text-2xl font-bold text-cyan-100">
                   {item.date}
                 </p>
-                <p className="mt-2 leading-7 text-slate-300">{item.title}</p>
+                <p className="mt-2 font-semibold leading-7 text-slate-200">
+                  {item.title}
+                </p>
+                {"detail" in item ? (
+                  <p className="mt-1 text-sm leading-6 text-slate-400">
+                    {item.detail}
+                  </p>
+                ) : null}
               </div>
             ))}
           </div>
@@ -140,43 +183,63 @@ export default function RegistrationPage() {
 
         <InfoCard title="二、線上報名">
           <div className="space-y-5 leading-8 text-slate-300">
-            <p>本活動採線上報名。請於 Google 表單中填妥真實資料並送出，即完成報名。</p>
+            <p>本活動採線上報名，請於報名期間填寫並送出 Google 表單。</p>
             <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5">
               <h3 className="mb-2 text-xl font-bold text-white">報名簡章</h3>
               <p>
-                報名前請務必詳閱報名簡章，並建議先閱讀報名表單題目
-                （附於報名簡章後）再開始填寫表單。
+                填寫表單前，請先詳閱報名簡章及表單題目，確認所需資料後
+                再進行報名。
               </p>
               <p className="mt-3 text-sm leading-7 text-slate-400">
                 報名簡章連結將於正式公告後更新，請以本網站與官方社群公告為準。
               </p>
             </div>
-            <p>
-              報名時間為 9/14 起至 10/31 截止。備取與後續遞補流程依公告及
-              信件通知辦理，12/3 為報名完全截止日。
-            </p>
+            <div className="rounded-2xl bg-white/5 p-5">
+              <p className="text-sm font-semibold tracking-[0.18em] text-cyan-300">
+                報名期間
+              </p>
+              <p className="mt-2 text-2xl font-bold text-cyan-100">
+                {registrationPeriod.start}－{registrationPeriod.end}
+              </p>
+              <p className="mt-3 leading-8 text-slate-300">
+                錄取結果、備取遞補與繳費相關通知，請依網站公告及 Email 通知辦理。
+              </p>
+            </div>
             <ul className="space-y-3">
-              {registrationNotes.map((note) => (
-                <li key={note} className="rounded-2xl bg-white/5 px-5 py-4">
-                  ※ {note}
-                </li>
-              ))}
+              <li className="rounded-2xl bg-white/5 px-5 py-4">
+                ※ 表單需上傳個人照片，填寫前請先登入 Google 帳戶。
+              </li>
+              <li className="rounded-2xl bg-white/5 px-5 py-4">
+                ※ 請務必取得監護人同意再報名本活動。
+              </li>
             </ul>
+            <div className="rounded-2xl bg-white/5 p-5">
+              <p className="mb-3 font-semibold text-cyan-100">
+                報到時須繳交以下紙本文件：
+              </p>
+              <ul className="list-inside list-disc space-y-2">
+                {requiredPaperDocuments.map((document) => (
+                  <li key={document}>{document}</li>
+                ))}
+              </ul>
+              <p className="mt-4 leading-8 text-slate-300">
+                請事先列印、填寫完整並完成監護人簽章。文件下載連結將於正式公告後更新。
+              </p>
+            </div>
           </div>
         </InfoCard>
 
         <InfoCard title="三、報名費用說明">
           <div className="space-y-5 leading-8 text-slate-300">
             <p>
-              報名費用為
-              <strong className="mx-1 text-cyan-200">7500 元整</strong>
-              ，此為不包含住宿的費用。
+              一般報名費用為 7500 元；申請代訂住宿者共 10300 元。
+              實際繳費方式與相關注意事項，以錄取通知信為準。
             </p>
             <p>
               2027 化學營為日歸營，將不提供住宿，營隊期間只有白天時會一同
               參與化學營的活動。居住於外縣市或基於其他原因而有住宿需求之學員，
-              我們會於報名時另行調查協助辦理住宿；代訂住宿費用與合計金額
-              以錄取信件通知為準。若有任何疑問，可以私訊粉專或寄 e-mail 詢問。
+              我們會於報名時另行調查協助辦理住宿。若有任何疑問，可以私訊粉專
+              或寄 e-mail 詢問。
             </p>
           </div>
         </InfoCard>
@@ -247,43 +310,55 @@ export default function RegistrationPage() {
         <InfoCard title="六、繳費須知">
           <div className="space-y-8 leading-8 text-slate-300">
             <p className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5 font-semibold text-cyan-100">
-              請詳閱須知以免自身權益受損。
+              錄取後請依通知期限完成繳費，並確認以下繳費資訊。
             </p>
 
             <div>
               <h3 className="mb-3 text-xl font-bold text-white">報名費用</h3>
-              <p>
-                一般報名費用為
-                <strong className="mx-1 text-cyan-200">7500 元</strong>
-                ，申請代訂住宿者共
-                <strong className="mx-1 text-cyan-200">10300 元</strong>
-                ，詳情請見錄取信件通知。
+              <div className="grid gap-3 sm:grid-cols-2">
+                {feeOptions.map((fee) => (
+                  <div key={fee.label} className="rounded-2xl bg-white/5 p-5">
+                    <p className="font-semibold text-cyan-200">{fee.label}</p>
+                    <p className="mt-2 text-3xl font-bold text-cyan-100">
+                      {fee.amount}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-sm leading-7 text-slate-400">
+                實際繳費方式與相關注意事項，以錄取通知信為準。
               </p>
             </div>
 
             <div>
               <h3 className="mb-3 text-xl font-bold text-white">繳費期限</h3>
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {paymentDeadlines.map((deadline) => (
                   <div key={deadline.label} className="rounded-2xl bg-white/5 p-5">
                     <p className="font-semibold text-cyan-200">
                       {deadline.label}
                     </p>
-                    <p className="mt-2">{deadline.value}</p>
+                    <p className="mt-2 text-2xl font-bold text-cyan-100">
+                      {deadline.date}
+                    </p>
+                    <p className="mt-2">{deadline.description}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-5 rounded-2xl border border-cyan-300/30 bg-cyan-300/10 p-5 shadow-[0_0_22px_rgba(34,211,238,0.12)]">
-                <p className="text-lg font-bold text-cyan-100">
-                  繳費截止：12/5
+                <p className="text-sm font-semibold tracking-[0.18em] text-cyan-300">
+                  最終繳費截止
+                </p>
+                <p className="mt-2 text-3xl font-bold text-cyan-100">
+                  12/5
                 </p>
                 <p className="mt-2 text-sm leading-7 text-slate-300">
-                  請於截止日前完成匯款及繳費確認表單。
+                  請依錄取通知中的期限完成繳費與確認程序。
                 </p>
               </div>
               <p className="mt-4 text-sm leading-7 text-slate-400">
-                ※ 非錄取生請勿匯款，如有此狀況我們將直接退回您的款項，
-                並不負擔轉帳手續費等損失。
+                ※ 請於收到錄取通知後再進行繳費。未獲錄取者請勿自行匯款；
+                若因此產生轉帳手續費等費用，將由匯款人自行負擔。
               </p>
             </div>
 
@@ -291,29 +366,29 @@ export default function RegistrationPage() {
               <h3 className="mb-3 text-xl font-bold text-white">匯款資訊</h3>
               <dl className="grid gap-x-5 gap-y-3 rounded-2xl bg-white/5 p-5 sm:grid-cols-[8rem_1fr]">
                 <dt className="font-semibold text-cyan-200">戶名</dt>
-                <dd>國立臺灣大學化學系學生會</dd>
-                <dt className="font-semibold text-cyan-200">銀行／郵局</dt>
-                <dd>中華郵政</dd>
+                <dd>{paymentInfo.accountName}</dd>
+                <dt className="font-semibold text-cyan-200">金融機構</dt>
+                <dd>{paymentInfo.institution}</dd>
                 <dt className="font-semibold text-cyan-200">銀行代碼</dt>
-                <dd>700</dd>
+                <dd>{paymentInfo.bankCode}</dd>
                 <dt className="font-semibold text-cyan-200">帳號</dt>
-                <dd>請依錄取信件通知為準</dd>
+                <dd>{paymentInfo.accountNumber}</dd>
               </dl>
               <p className="mt-4 text-sm leading-7 text-slate-400">
-                ※ 轉帳時請確認收款戶名為「國立臺灣大學化學系學生會」。
+                {`※ 匯款前請確認收款戶名為「${paymentInfo.accountName}」。`}
               </p>
             </div>
 
             <div>
               <h3 className="mb-3 text-xl font-bold text-white">繳費確認</h3>
               <p className="mb-4">
-                完成轉帳後，請填寫繳費資訊表單，方便工作人員核對款項。
+                完成轉帳後，請填寫繳費確認表單，以利工作人員核對款項。
               </p>
-              <ol className="grid gap-3">
+              <ol className="grid gap-3 sm:grid-cols-2">
                 {paymentConfirmationSteps.map((step, index) => (
                   <li
                     key={step}
-                    className="grid grid-cols-[2.5rem_1fr] gap-3 rounded-2xl bg-white/5 px-4 py-3"
+                    className="grid grid-cols-[2.5rem_1fr] gap-3 rounded-2xl bg-white/5 px-4 py-4"
                   >
                     <span className="font-semibold text-cyan-200">
                       {index + 1}.
@@ -322,6 +397,9 @@ export default function RegistrationPage() {
                   </li>
                 ))}
               </ol>
+              <p className="mt-4 text-sm leading-7 text-slate-400">
+                款項核對完成後，將更新錄取名單中的繳費狀態。
+              </p>
             </div>
           </div>
         </InfoCard>

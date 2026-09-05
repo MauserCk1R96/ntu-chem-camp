@@ -58,6 +58,5 @@ export const registrationSummary = {
   location: "國立臺灣大學化學系",
   audience: "全國高中職學生",
   fee: "NT$ 7500",
-  formUrl:
-    "https://docs.google.com/forms/d/e/1FAIpQLSfR076Pp1ChtU1-3SQOgQ989M0kuM7ur9sgsv3Yysz5mksVUA/viewform?usp=sharing&ouid=103461614838581818619",
+  formUrl: "https://forms.gle/roTy1K36Jps2N1c27",
 };

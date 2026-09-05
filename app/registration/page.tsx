@@ -53,14 +53,21 @@ const paymentDeadlines = [
   },
 ];
 
+const paymentConfirmationSteps = [
+  "完成匯款後，請填寫繳費確認表單。",
+  "表單中請填寫報名者資料及匯款資訊，例如轉帳帳號末五碼。",
+  "工作人員核對完成後，會更新錄取／繳費狀態。",
+  "如超過數個工作天仍未更新，請透過網站聯絡方式與我們確認。",
+];
+
 const refundRules = [
-  "為確保活動品質，主辦方須預先支出食宿、場地等費用。營隊開始前，學員已完成報名及繳費手續，若在活動開始 21 日前（含）因故無法參與營隊，扣除所需行政費用後，退還報名費九成。",
-  "營隊開始前 8 至 20 天內取消參加，退還報名費七成；營隊開始前 7 天內取消參加，恕無法退費。",
-  "營隊開始前，如遇重大天災、流行病等不可抗力情事致使營隊取消，則退還報名費七成，並於原定營期開始日十四日內退還。",
-  "營期中如遇重大天災、流行病等不可抗力情事，為確保學員安全，得由主辦單位決定提前結束。若於營期第 1 至 3 天活動中止，扣除已支出之費用以及未支出但屬必要之費用後，剩餘費用全數退還。",
-  "若於營期第 4 至 5 天活動中止，因活動費用皆已支出，唯餐費可退還，其餘恕不退費。",
-  "營隊進行中，若因學員個人因素未完整參與營隊活動而提早離開，因課程、活動等皆照常進行，恕不退費。",
-  "以上退款方式，若覺有不妥之處，請慎重考慮再行匯款。主辦單位保留活動更動與解釋權。",
+  "營隊開始 21 日前（含）取消參加者，扣除必要行政費用後，退還報名費九成。",
+  "營隊開始前 8 至 20 天取消參加者，退還報名費七成；開始前 7 天內取消參加者，恕無法退費。",
+  "營隊開始前，如因重大天災、流行病等不可抗力因素致營隊取消，退還報名費七成，並於原定營隊開始日起十四日內退還。",
+  "營隊期間如因重大天災、流行病等不可抗力因素，經主辦單位決定提前結束，將扣除已支出及無法退回之必要費用後，退還剩餘款項。",
+  "若營隊第 4 至第 5 天提前結束，因相關活動費用多已支出，僅餐費得視實際情況退還，其餘費用不予退還。",
+  "營隊進行期間，如學員因個人因素未完整參與活動而提前離開，恕不退費。",
+  "如對退費規定有疑問，請先與主辦單位聯繫。主辦單位保留活動異動及規定解釋權。",
 ];
 
 function InfoCard({
@@ -266,6 +273,14 @@ export default function RegistrationPage() {
                   </div>
                 ))}
               </div>
+              <div className="mt-5 rounded-2xl border border-cyan-300/30 bg-cyan-300/10 p-5 shadow-[0_0_22px_rgba(34,211,238,0.12)]">
+                <p className="text-lg font-bold text-cyan-100">
+                  繳費截止：12/5
+                </p>
+                <p className="mt-2 text-sm leading-7 text-slate-300">
+                  請於截止日前完成匯款及繳費確認表單。
+                </p>
+              </div>
               <p className="mt-4 text-sm leading-7 text-slate-400">
                 ※ 非錄取生請勿匯款，如有此狀況我們將直接退回您的款項，
                 並不負擔轉帳手續費等損失。
@@ -274,29 +289,39 @@ export default function RegistrationPage() {
 
             <div>
               <h3 className="mb-3 text-xl font-bold text-white">匯款資訊</h3>
-              <dl className="grid gap-3 rounded-2xl bg-white/5 p-5 sm:grid-cols-[8rem_1fr]">
+              <dl className="grid gap-x-5 gap-y-3 rounded-2xl bg-white/5 p-5 sm:grid-cols-[8rem_1fr]">
                 <dt className="font-semibold text-cyan-200">戶名</dt>
                 <dd>國立臺灣大學化學系學生會</dd>
-                <dt className="font-semibold text-cyan-200">分局</dt>
-                <dd>郵局 700</dd>
+                <dt className="font-semibold text-cyan-200">銀行／郵局</dt>
+                <dd>中華郵政</dd>
+                <dt className="font-semibold text-cyan-200">銀行代碼</dt>
+                <dd>700</dd>
+                <dt className="font-semibold text-cyan-200">帳號</dt>
+                <dd>請依錄取信件通知為準</dd>
               </dl>
               <p className="mt-4 text-sm leading-7 text-slate-400">
-                ※ 請注意，戶名不是臺大化學營。
+                ※ 轉帳時請確認收款戶名為「國立臺灣大學化學系學生會」。
               </p>
             </div>
 
             <div>
               <h3 className="mb-3 text-xl font-bold text-white">繳費確認</h3>
-              <p>
-                繳費完成後，請填寫繳費資訊表單。我們確認收到款項後，
-                將在錄取名單上更新繳費記錄（平日更新）。若期限內未填寫表單，
-                則視為未繳費，取消其錄取資格。
+              <p className="mb-4">
+                完成轉帳後，請填寫繳費資訊表單，方便工作人員核對款項。
               </p>
-              <p className="mt-4">
-                下方的學員錄取報到表單也請依錄取信件規定期限填寫完畢。
-                填寫完畢才視為完成報到，所有繳費流程最晚至 12/5 完全截止。
-                請自行注意郵局或銀行營業時間。
-              </p>
+              <ol className="grid gap-3">
+                {paymentConfirmationSteps.map((step, index) => (
+                  <li
+                    key={step}
+                    className="grid grid-cols-[2.5rem_1fr] gap-3 rounded-2xl bg-white/5 px-4 py-3"
+                  >
+                    <span className="font-semibold text-cyan-200">
+                      {index + 1}.
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
         </InfoCard>
@@ -305,13 +330,16 @@ export default function RegistrationPage() {
           <p className="mb-5 leading-8 text-slate-300">
             相關規定詳列如下，請詳細閱讀，參與本營隊者視為同意下列事項。
           </p>
-          <ol className="space-y-4 leading-8 text-slate-300">
+          <ol className="space-y-3 leading-8 text-slate-300">
             {refundRules.map((rule, index) => (
-              <li key={rule} className="rounded-2xl bg-white/5 px-5 py-4">
+              <li
+                key={rule}
+                className="grid grid-cols-[2.5rem_1fr] gap-3 rounded-2xl bg-white/5 px-4 py-3"
+              >
                 <span className="font-semibold text-cyan-200">
                   {index + 1}.
-                </span>{" "}
-                {rule}
+                </span>
+                <span>{rule}</span>
               </li>
             ))}
           </ol>

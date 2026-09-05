@@ -5,7 +5,7 @@ import { programItems, programTakeaways } from "@/app/program/program-data";
 export const metadata: Metadata = {
   title: "活動內容｜台大化學營",
   description:
-    "了解台大化學營的活動內容，包含化學實驗、書報討論、示範實驗、密室夜解謎、RPG、大地遊戲、籌碼競賽、晚會與大合照，體驗專為高中生設計的化學營隊。",
+    "了解台大化學營的活動內容，包含化學實驗、書報討論、示範實驗、密室夜解謎、RPG、大地遊戲、籌碼競賽、晚會與大合照。",
   alternates: {
     canonical: "/program",
   },
@@ -24,13 +24,12 @@ export default function ProgramPage() {
             活動內容
           </h1>
           <p className="mb-6 text-2xl font-semibold leading-9 text-cyan-100">
-            從化學實驗到沉浸式任務，探索台大化學營的每一個精彩片段。
+            五天四夜，從實驗、討論到團隊活動，一起看看營期間會做些什麼。
           </p>
-          <p className="text-lg leading-8 text-slate-300">
-            台大化學營的活動內容不只包含實驗課程，也結合書報討論、示範實驗、團隊競賽、劇情解謎與晚會活動。這是一場為高中生
-            設計的化學營隊，學員將在五天的營隊中，從觀察、操作、
-            討論到合作挑戰，完整體驗化學實驗、團隊活動與大學生活
-            交織出的營隊日常。
+          <p className="max-w-3xl text-lg leading-9 text-slate-300">
+            台大化學營除了實驗課程，也安排書報討論、團隊競賽、劇情任務
+            與晚會等活動。學員會以小隊形式參與不同任務，在五天的營期中
+            實際操作、討論、合作，也從活動中認識大學化學的學習方式與校園生活。
           </p>
         </div>
       </section>
@@ -42,16 +41,15 @@ export default function ProgramPage() {
               CAMP MOMENTS
             </p>
             <h2 className="text-3xl font-bold md:text-4xl">
-              十個活動分類，串起營隊的每一天
+              營隊裡會有哪些活動？
             </h2>
           </div>
-          <p className="max-w-xl leading-7 text-slate-400">
-            每個活動都承接不同的學習目標：有科學探索，也有團隊合作；
-            有腦力激盪，也有體能競賽。
+          <p className="max-w-xl leading-8 text-slate-300">
+            活動會穿插在營期間進行，包含實驗、討論、競賽與團隊任務。
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-2">
           {programItems.map((item) => (
             <ProgramCard key={item.title} item={item} />
           ))}
@@ -80,7 +78,7 @@ export default function ProgramPage() {
               <h3 className="mb-4 text-xl font-bold text-white">
                 {takeaway.title}
               </h3>
-              <p className="leading-7 text-slate-300">
+              <p className="leading-8 text-slate-300">
                 {takeaway.description}
               </p>
             </article>

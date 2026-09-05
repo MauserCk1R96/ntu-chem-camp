@@ -35,7 +35,7 @@ export default function ProgramPage() {
       </section>
 
       <section className="mx-auto mt-16 max-w-6xl">
-        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="mb-8">
           <div>
             <p className="mb-3 text-sm font-semibold tracking-[0.28em] text-cyan-300">
               CAMP MOMENTS
@@ -44,7 +44,7 @@ export default function ProgramPage() {
               營隊裡會有哪些活動？
             </h2>
           </div>
-          <p className="max-w-xl leading-8 text-slate-300">
+          <p className="mt-4 max-w-xl leading-8 text-slate-300">
             活動會穿插在營期間進行，包含實驗、討論、競賽與團隊任務。
           </p>
         </div>

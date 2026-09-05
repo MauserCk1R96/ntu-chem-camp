@@ -21,7 +21,7 @@ export default function GalleryPage() {
   );
 
   return (
-    <main className="min-h-screen bg-slate-950 px-6 pb-24 pt-32 text-white">
+    <main className="relative z-10 min-h-screen bg-slate-950/80 px-6 pb-24 pt-32 text-white backdrop-blur-[1px]">
       <section className="mx-auto max-w-6xl">
         <div className="relative overflow-hidden rounded-3xl border border-cyan-300/20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.2),transparent_36%),linear-gradient(135deg,rgba(15,23,42,0.98),rgba(2,6,23,0.98))] p-6 shadow-[0_0_45px_rgba(34,211,238,0.1)] md:p-10">
           <p className="mb-4 text-sm font-semibold tracking-[0.3em] text-cyan-300">

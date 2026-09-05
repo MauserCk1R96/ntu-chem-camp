@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="relative z-10 min-h-screen text-white">
       <section className="mx-auto grid min-h-screen max-w-6xl items-center gap-12 px-6 py-28 md:grid-cols-[0.9fr_1.1fr] md:py-20">
         <div className="text-center md:text-left">
           <p className="mb-4 text-sm tracking-[0.3em] text-cyan-300">

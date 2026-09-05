@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import Navbar from "@/component/Navbar";
+import SiteBackground from "@/component/SiteBackground";
 import {
   siteDescription,
   siteKeywords,
@@ -89,7 +90,8 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="relative min-h-full flex flex-col bg-slate-950">
+        <SiteBackground />
         <Navbar />
         {children}
       </body>

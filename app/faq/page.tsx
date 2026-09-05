@@ -53,7 +53,7 @@ const faqs: Faq[] = [
 
 export default function FaqPage() {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 pb-24 pt-32 text-white">
+    <main className="relative z-10 min-h-screen bg-slate-950/80 px-6 pb-24 pt-32 text-white backdrop-blur-[1px]">
       <section className="mx-auto max-w-5xl">
         <div className="mb-12 max-w-3xl">
           <p className="mb-4 text-sm font-semibold tracking-[0.3em] text-cyan-300">

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const registrationFormUrl = "https://forms.gle/z9fVU8esm8tWjH1K9";
-const subsidyFormUrl = "https://forms.gle/wd1rfRsHfGZpGNhU6";
+const subsidyFormUrl = "https://forms.gle/dkSYqkjogGVWghE77";
 
 const registrationPeriod = {
   start: "9/14",

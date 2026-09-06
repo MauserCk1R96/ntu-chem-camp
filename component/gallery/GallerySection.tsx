@@ -6,6 +6,9 @@ type GallerySectionProps = {
 };
 
 export default function GallerySection({ category }: GallerySectionProps) {
+  const categoryLabel =
+    category.id === "demo-experiment" ? "DEMO" : category.folder.toUpperCase();
+
   return (
     <section
       id={category.id}
@@ -14,7 +17,7 @@ export default function GallerySection({ category }: GallerySectionProps) {
       <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="mb-3 text-sm font-semibold tracking-[0.28em] text-cyan-300">
-            {category.folder.toUpperCase()}
+            {categoryLabel}
           </p>
           <h2 className="text-3xl font-bold text-white">{category.title}</h2>
           <p className="mt-3 max-w-3xl text-lg font-semibold leading-8 text-cyan-100">

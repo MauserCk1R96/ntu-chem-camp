@@ -85,7 +85,7 @@ export default function Home() {
           {homeHighlights.map((item) => (
             <div
               key={item.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-8"
+              className="rounded-3xl border border-white/20 bg-slate-950/55 p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_18px_60px_rgba(2,6,23,0.45),0_0_28px_rgba(34,211,238,0.14)] backdrop-blur-xl"
             >
               <h3 className="mb-4 text-xl font-bold text-cyan-300">
                 {item.title}
@@ -99,8 +99,8 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-8 rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 shadow-[0_0_35px_rgba(34,211,238,0.1)] md:grid-cols-[0.85fr_1.15fr] md:p-10">
-          <div className="relative min-h-56 overflow-hidden rounded-3xl border border-dashed border-cyan-300/30 bg-slate-950/50">
+        <div className="grid gap-8 rounded-3xl border border-cyan-200/35 bg-slate-950/50 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_20px_70px_rgba(2,6,23,0.48),0_0_36px_rgba(34,211,238,0.18)] backdrop-blur-2xl md:grid-cols-[0.85fr_1.15fr] md:p-10">
+          <div className="relative min-h-56 overflow-hidden rounded-3xl border border-dashed border-cyan-200/45 bg-slate-950/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(34,211,238,0.12)] backdrop-blur-xl">
             {campPackage.image ? (
               <Image
                 src={campPackage.image}

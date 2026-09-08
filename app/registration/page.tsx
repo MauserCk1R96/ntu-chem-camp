@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RegistrationFormLink from "@/component/RegistrationFormLink";
 
 export const metadata: Metadata = {
   title: "報名資訊、繳費須知與退款規定",
@@ -137,14 +138,10 @@ export default function RegistrationPage() {
         </p>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
+          <RegistrationFormLink
             href={registrationFormUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="rounded-full bg-cyan-400 px-8 py-3 text-center font-semibold text-slate-950 transition hover:bg-cyan-300"
-          >
-            前往報名表單
-          </a>
+          />
           <a
             href="mailto:ntuchchemcamp@gmail.com"
             className="rounded-full border border-white/30 px-8 py-3 text-center font-semibold text-white transition hover:bg-white/10"

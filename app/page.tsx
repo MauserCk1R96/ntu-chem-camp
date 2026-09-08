@@ -6,6 +6,7 @@ import {
   homeHighlights,
   registrationSummary,
 } from "@/app/home-data";
+import RegistrationFormLink from "@/component/RegistrationFormLink";
 
 export default function Home() {
   return (
@@ -150,14 +151,10 @@ export default function Home() {
         </p>
 
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <a
+          <RegistrationFormLink
             href={registrationSummary.formUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="rounded-full bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
-          >
-            前往報名表單
-          </a>
+          />
           <Link
             href="/about"
             className="rounded-full border border-white/30 px-8 py-3 font-semibold text-white transition hover:bg-white/10"

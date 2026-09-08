@@ -192,7 +192,7 @@ export default function ProgramCard({ item }: ProgramCardProps) {
     : "border-white/10 bg-white/[0.04] shadow-[0_0_35px_rgba(15,23,42,0.35)]";
 
   return (
-    <article className={`flex h-full min-h-[25rem] flex-col rounded-3xl border p-6 ${cardClass}`}>
+    <article className={`flex h-full min-h-[22rem] flex-col rounded-3xl border p-6 ${cardClass}`}>
       <div className="mb-6 flex items-start justify-between gap-4">
         <div>
           <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -226,9 +226,9 @@ export default function ProgramCard({ item }: ProgramCardProps) {
         {item.tagline}
       </p>
 
-      <p className="grow leading-8 text-slate-200/90">{item.description}</p>
+      <p className="leading-8 text-slate-200/90">{item.description}</p>
 
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="mt-3 flex flex-wrap gap-2">
         {item.tags.map((tag) => (
           <span
             key={tag}

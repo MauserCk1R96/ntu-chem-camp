@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 const aboutParagraphs = [
-  "台大化學營是由國立臺灣大學化學系學生籌辦、專為高中生設計的暑期營隊。我們期望帶領學員跳脫課本上的公式與反應式，走進大學化學系的真實樣貌，重新認識這門能廣泛連結生活、材料、能源與未來科技的實用學問。",
-  "在營隊中，學員將親自參與多元的課程設計。透過大實驗、紀念品實作與專業的示範實驗，學員能在安全的環境下動手操作，近距離觀察化學現象背後的原理。此外，我們也安排了「書報討論」環節，引導學員閱讀並整理科學文獻，練習以自己的邏輯詮釋化學議題。",
+  "台大化學營是由國立臺灣大學化學系學生籌辦、專為高中生設計的寒期營隊。我們期望帶領學員跳脫課本上的公式與反應式，走進大學化學系的真實樣貌，重新認識這門能廣泛連結生活、材料、能源與未來科技的實用學問。",
+  "在營隊中，學員將不只是坐在教室裡聽課，而是親自參與多元的活動。透過大實驗、紀念品實作與專業的示範實驗，學員能在安全的環境下動手操作，近距離觀察化學現象背後的原理。此外，我們也安排了「書報討論」環節，引導學員閱讀並整理科學文獻，練習以自己的邏輯詮釋化學議題。",
   "除了紮實的學術內容，台大化學營同樣重視團隊合作的體驗。透過大地遊戲、密室夜解謎、RPG、籌碼競賽與晚會等豐富活動，讓來自各地的高中生在小隊中共同思考、挑戰任務，不僅能培養默契，更能結交志同道合的朋友。",
-  "我們期盼每位參與者都能在營隊期間，看見化學更多元的面向。無論是已經對科學抱有濃厚興趣，或是正在探索未來志向，台大化學營都希望能成為你認識大學生活、發掘自身無限潛能的起點。",
+  "我們期盼每位參與者都能在營隊期間，看見化學更多元的面向。無論是已經對科學抱有濃厚興趣，或是正在探索未來志向，希望台大化學營能成為你接近科學、認識大學生活，並發現自己可能性的起點。",
 ];
 
 const venueHighlights = [
@@ -65,12 +65,12 @@ export default function AboutPage() {
             <Link
               key={area.slug}
               href={`/about/${area.slug}`}
-              className="group flex h-28 flex-col items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-5 text-center font-semibold text-cyan-100 transition hover:-translate-y-1 hover:border-cyan-200/60 hover:bg-cyan-300/15 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+              className="group relative flex h-28 items-center justify-center overflow-hidden rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-5 text-center font-semibold text-cyan-100 transition hover:-translate-y-1 hover:border-cyan-200/60 hover:bg-cyan-300/15 focus:outline-none focus:ring-2 focus:ring-cyan-200"
             >
-              <span className="block text-lg transition-transform duration-300 group-hover:-translate-y-3 group-focus-visible:-translate-y-3">
+              <span className="absolute inset-0 flex items-center justify-center px-5 text-center text-lg transition-transform duration-300 group-hover:-translate-y-3 group-focus-visible:-translate-y-3">
                 {area.title}
               </span>
-              <span className="mt-2 block translate-y-2 text-sm font-medium leading-6 text-slate-300 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+              <span className="absolute inset-x-0 bottom-5 block translate-y-2 px-5 text-center text-sm font-medium leading-6 text-slate-300 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
                 查看介紹
               </span>
             </Link>

@@ -45,9 +45,7 @@ export const homeHighlights = [
 
 export const campPackage = {
   title: "營包介紹",
-  // TODO: 補上正式營包照片、品項名稱與內容；目前專案內尚未找到已確認資料。
-  image: null as string | null,
-  imageAlt: "台大化學營營包內容照片",
+  
   statusLabel: "L'Hiver Fantôme",
   description:
     "西元2728年，巨城的霓虹依然閃爍，卻因能源逐漸耗盡而隱隱失序。當中央系統發出調查指令，你將成為見習特工，" +

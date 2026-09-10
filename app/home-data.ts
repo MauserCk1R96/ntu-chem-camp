@@ -45,7 +45,6 @@ export const homeHighlights = [
 
 export const campPackage = {
   title: "營包介紹",
-  
   statusLabel: "L'Hiver Fantôme",
   description:
     "西元2728年，巨城的霓虹依然閃爍，卻因能源逐漸耗盡而隱隱失序。當中央系統發出調查指令，你將成為見習特工，" +

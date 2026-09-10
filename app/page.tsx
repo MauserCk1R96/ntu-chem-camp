@@ -100,33 +100,13 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-8 rounded-3xl border border-cyan-100/45 bg-cyan-100/[0.06] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.34),0_20px_70px_rgba(2,6,23,0.4),0_0_36px_rgba(34,211,238,0.2)] backdrop-blur-2xl backdrop-saturate-150 md:grid-cols-[0.85fr_1.15fr] md:p-10">
-          <div className="relative min-h-56 overflow-hidden rounded-3xl border border-dashed border-cyan-100/45 bg-white/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.28),0_0_24px_rgba(34,211,238,0.14)] backdrop-blur-2xl backdrop-saturate-150">
-            {campPackage.image ? (
-              <Image
-                src={campPackage.image}
-                alt={campPackage.imageAlt}
-                fill
-                sizes="(min-width: 768px) 35vw, 92vw"
-                className="object-cover"
-              />
-            ) : (
-              <div className="flex h-full min-h-56 items-center justify-center px-6 text-center">
-                <div>
-                  <p className="text-sm font-semibold tracking-[0.24em] text-cyan-300">
-                    {campPackage.statusLabel}
-                  </p>
-                  <p className="mt-3 text-lg font-bold text-cyan-100">
-                    營包圖片準備中
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div className="flex flex-col justify-center">
+        <div className="rounded-3xl border border-cyan-100/45 bg-cyan-100/[0.06] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.34),0_20px_70px_rgba(2,6,23,0.4),0_0_36px_rgba(34,211,238,0.2)] backdrop-blur-2xl backdrop-saturate-150 md:p-10">
+          <div className="max-w-3xl">
             <p className="mb-3 text-sm font-semibold tracking-[0.28em] text-cyan-300">
               CAMP KIT
+            </p>
+            <p className="mb-4 text-sm font-semibold tracking-[0.24em] text-cyan-100">
+              {campPackage.statusLabel}
             </p>
             <h2 className="mb-5 text-3xl font-bold md:text-4xl">
               {campPackage.title}

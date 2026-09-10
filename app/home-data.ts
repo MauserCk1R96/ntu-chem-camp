@@ -2,7 +2,7 @@ export const homeHero = {
   eyebrow: "NTU CHEMISTRY CAMP",
   campName: "台大化學營",
   // TODO: 補上本屆正式營隊名稱與主題 slogan；目前專案內尚未找到已確認文字。
-  themeSlogan: null as string | null,
+  themeSlogan: "L'Hiver Fantôme",
   description:
     "這個冬天，讓化學不只存在課本裡。走進台大化學系，在霓虹與分子交錯的空間中，探索分子世界的無限可能。",
   primaryCta: {

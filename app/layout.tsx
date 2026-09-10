@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   description: siteDescription,
   keywords: siteKeywords,
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   },
   alternates: {

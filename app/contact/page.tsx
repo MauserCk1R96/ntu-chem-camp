@@ -18,8 +18,8 @@ const contactMethods = [
   },
   {
     label: "Instagram",
-    value: "@2026_ntuch_camp",
-    href: "https://www.instagram.com/2026_ntuch_camp/",
+    value: "@2027_ntuch_camp",
+    href: "https://www.instagram.com/2027_ntuch_camp/",
     description: "追蹤最新活動公告、照片與營隊資訊。",
   },
   {

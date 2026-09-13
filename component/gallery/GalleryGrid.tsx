@@ -15,6 +15,7 @@ type GalleryGridProps = {
 
 export default function GalleryGrid({ category }: GalleryGridProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   const activeImage = useMemo(() => {
     if (activeIndex === null) {
@@ -25,6 +26,10 @@ export default function GalleryGrid({ category }: GalleryGridProps) {
   }, [activeIndex, category.images]);
 
   const closeLightbox = useCallback(() => setActiveIndex(null), []);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const showPrevious = useCallback(() => {
     setActiveIndex((current) => {
@@ -90,67 +95,73 @@ export default function GalleryGrid({ category }: GalleryGridProps) {
 
   const lightbox = activeImage ? (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-950/90 px-4 py-6 backdrop-blur"
+      className="fixed inset-0 z-[9999] bg-slate-950/95 backdrop-blur"
       role="dialog"
       aria-modal="true"
       aria-label={`${category.title}照片檢視`}
       onClick={closeLightbox}
     >
       <div
-        className="relative flex max-h-full w-full max-w-6xl flex-col gap-4"
+        className="fixed inset-x-4 top-4 z-[10001] flex items-center justify-between gap-4 sm:inset-x-6"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-sm font-semibold tracking-[0.24em] text-cyan-300">
-              {category.title}
-            </p>
-            <p className="mt-1 text-sm text-slate-300">
-              {(activeIndex ?? 0) + 1} / {category.images.length}
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={closeLightbox}
-            className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200"
-            aria-label="關閉照片檢視"
-          >
-            關閉
-          </button>
+        <div>
+          <p className="text-sm font-semibold tracking-[0.24em] text-cyan-300">
+            {category.title}
+          </p>
+          <p className="mt-1 text-sm text-slate-300">
+            {(activeIndex ?? 0) + 1} / {category.images.length}
+          </p>
         </div>
+        <button
+          type="button"
+          onClick={closeLightbox}
+          className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200"
+          aria-label="關閉照片檢視"
+        >
+          關閉
+        </button>
+      </div>
 
-        <div className="relative h-[72vh] overflow-hidden rounded-3xl border border-cyan-300/20 bg-slate-950 shadow-[0_0_45px_rgba(34,211,238,0.16)]">
+      <div
+        className="fixed inset-x-4 bottom-20 top-20 z-[10000] flex items-center justify-center sm:inset-x-6"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div className="relative h-full w-full overflow-hidden rounded-3xl border border-cyan-300/20 bg-slate-950 shadow-[0_0_45px_rgba(34,211,238,0.16)]">
           <Image
             src={getGalleryImagePath(category, activeImage)}
             alt={getGalleryImageAlt(category, activeIndex ?? 0)}
             fill
-            sizes="92vw"
+            sizes="100vw"
             className="object-contain"
             priority
           />
         </div>
-
-        {category.images.length > 1 ? (
-          <div className="flex items-center justify-between gap-3">
-            <button
-              type="button"
-              onClick={showPrevious}
-              className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200"
-              aria-label="查看上一張照片"
-            >
-              上一張
-            </button>
-            <button
-              type="button"
-              onClick={showNext}
-              className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200"
-              aria-label="查看下一張照片"
-            >
-              下一張
-            </button>
-          </div>
-        ) : null}
       </div>
+
+      {category.images.length > 1 ? (
+        <div
+          className="fixed inset-x-4 bottom-4 z-[10001] flex items-center justify-between gap-3 sm:inset-x-6"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <button
+            type="button"
+            onClick={showPrevious}
+            className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200"
+            aria-label="查看上一張照片"
+          >
+            上一張
+          </button>
+          <button
+            type="button"
+            onClick={showNext}
+            className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200"
+            aria-label="查看下一張照片"
+          >
+            下一張
+          </button>
+        </div>
+      ) : null}
     </div>
   ) : null;
 
@@ -182,7 +193,7 @@ export default function GalleryGrid({ category }: GalleryGridProps) {
         ))}
       </div>
 
-      {lightbox ? createPortal(lightbox, document.body) : null}
+      {isMounted && lightbox ? createPortal(lightbox, document.body) : null}
     </>
   );
 }

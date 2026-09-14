@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 const registrationFormUrl = "https://forms.gle/z9fVU8esm8tWjH1K9";
 const subsidyFormUrl = "https://forms.gle/dkSYqkjogGVWghE77";
+const registrationGuideUrl = "/documents/ntu-chem-camp-2027-registration-guide.pdf";
 
 const registrationPeriod = {
   start: "9/14",
@@ -187,9 +188,13 @@ export default function RegistrationPage() {
                 填寫表單前，請先詳閱報名簡章及表單題目，確認所需資料後
                 再進行報名。
               </p>
-              <p className="mt-3 text-sm leading-7 text-slate-400">
-                報名簡章連結將於正式公告後更新，請以本網站與官方社群公告為準。
-              </p>
+              <a
+                href={registrationGuideUrl}
+                download
+                className="mt-4 inline-flex rounded-full border border-cyan-200/50 bg-cyan-300/15 px-5 py-2 text-sm font-semibold text-cyan-100 transition hover:border-cyan-100 hover:bg-cyan-300/25"
+              >
+                下載 2027 報名簡章
+              </a>
             </div>
             <div className="rounded-2xl bg-white/5 p-5">
               <p className="text-sm font-semibold tracking-[0.18em] text-cyan-300">

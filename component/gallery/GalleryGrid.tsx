@@ -15,7 +15,6 @@ type GalleryGridProps = {
 
 export default function GalleryGrid({ category }: GalleryGridProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [isMounted, setIsMounted] = useState(false);
 
   const activeImage = useMemo(() => {
     if (activeIndex === null) {
@@ -26,10 +25,6 @@ export default function GalleryGrid({ category }: GalleryGridProps) {
   }, [activeIndex, category.images]);
 
   const closeLightbox = useCallback(() => setActiveIndex(null), []);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const showPrevious = useCallback(() => {
     setActiveIndex((current) => {
@@ -193,7 +188,7 @@ export default function GalleryGrid({ category }: GalleryGridProps) {
         ))}
       </div>
 
-      {isMounted && lightbox ? createPortal(lightbox, document.body) : null}
+      {lightbox ? createPortal(lightbox, document.body) : null}
     </>
   );
 }

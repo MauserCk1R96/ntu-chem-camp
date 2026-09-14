@@ -88,7 +88,7 @@ const paymentConfirmationSteps = [
 ];
 
 const paymentInfo = {
-  accountName: "國立臺灣大學化學系學生會",
+  accountName: "國立臺灣大學化學系學生會王奕棋",
   institution: "中華郵政",
   bankCode: "700",
   accountNumber: "請依錄取信件通知為準",

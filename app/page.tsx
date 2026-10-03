@@ -118,6 +118,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section aria-labelledby="acknowledgements-title" className="bg-slate-950/55 px-6 py-20">
+        <div className="mx-auto max-w-3xl rounded-3xl border border-cyan-300/20 bg-slate-900/40 px-6 py-10 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_18px_50px_rgba(2,6,23,0.28),0_0_24px_rgba(34,211,238,0.06)] backdrop-blur-xl sm:px-10 md:py-12">
+          <p className="text-xs font-semibold tracking-[0.28em] text-cyan-300/80">
+            ACKNOWLEDGEMENTS
+          </p>
+          <h2 id="acknowledgements-title" className="mt-3 text-2xl font-semibold text-white md:text-3xl">
+            特別感謝
+          </h2>
+          <div className="mx-auto my-7 h-px w-12 bg-cyan-300/30" aria-hidden="true" />
+          <Image
+            src="/acknowledgements/esun-wong-chi-huey-trust.png"
+            alt="玉山金控－翁啟惠教育業務公益信託標誌"
+            width={1013}
+            height={1019}
+            className="mx-auto mb-6 h-auto w-24 md:w-28"
+          />
+          <p className="text-xl font-semibold leading-relaxed text-slate-100 md:text-2xl">
+            玉山金控－翁啟惠教育業務公益信託
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-300 md:text-base">
+         
+          </p>
+        </div>
+      </section>
+
       <section id="register" className="mx-auto max-w-4xl px-6 py-24 text-center">
         <h2 className="mb-6 text-3xl font-bold">
           報名資訊

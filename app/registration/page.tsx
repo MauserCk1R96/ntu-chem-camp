@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AdmissionListLink from "@/component/AdmissionListLink";
 import RegistrationFormLink from "@/component/RegistrationFormLink";
 
 export const metadata: Metadata = {
@@ -177,6 +178,7 @@ export default function RegistrationPage() {
               </div>
             ))}
           </div>
+          <AdmissionListLink />
         </InfoCard>
 
         <InfoCard title="二、線上報名">

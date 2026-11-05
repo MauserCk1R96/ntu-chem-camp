@@ -1,4 +1,4 @@
-export type PaymentStatus = "待確認" | "已繳費" | "未繳費";
+export type PaymentStatus = "已繳費" | "未繳費";
 
 export type AdmissionRecord = {
   highSchool: string;
@@ -6,7 +6,7 @@ export type AdmissionRecord = {
   paymentStatus?: PaymentStatus;
 };
 
-// 姓名只存遮蔽版本；核對款項後，可為個別學員加入 paymentStatus。
+// 姓名只存遮蔽版本；未設定 paymentStatus 時顯示未繳費，核對款項後改為已繳費。
 export const admissionRecords: AdmissionRecord[] = [
   { highSchool: "基隆女中", maskedName: "吳O澄" },
   { highSchool: "中正高中", maskedName: "陳O潔" },

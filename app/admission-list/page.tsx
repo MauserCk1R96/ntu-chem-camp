@@ -16,7 +16,6 @@ export const metadata: Metadata = {
 const paymentStatusClass: Record<PaymentStatus, string> = {
   已繳費: "border-emerald-300/40 bg-emerald-300/10 text-emerald-100",
   未繳費: "border-amber-300/40 bg-amber-300/10 text-amber-100",
-  待確認: "border-slate-300/30 bg-white/5 text-slate-300",
 };
 
 export default async function AdmissionListPage() {
@@ -41,13 +40,13 @@ export default async function AdmissionListPage() {
   const paidCount = admissionRecords.filter(
     (record) => record.paymentStatus === "已繳費",
   ).length;
-  const pendingCount = admissionRecords.filter(
-    (record) => (record.paymentStatus ?? "待確認") === "待確認",
+  const unpaidCount = admissionRecords.filter(
+    (record) => (record.paymentStatus ?? "未繳費") === "未繳費",
   ).length;
   const summaryItems = [
     { label: "正取人數", value: admissionRecords.length },
     { label: "已登記繳費", value: paidCount },
-    { label: "繳費待確認", value: pendingCount },
+    { label: "未繳費", value: unpaidCount },
   ];
 
   return (
@@ -98,7 +97,7 @@ export default async function AdmissionListPage() {
           </div>
 
           {admissionRecords.map((record) => {
-            const paymentStatus = record.paymentStatus ?? "待確認";
+            const paymentStatus = record.paymentStatus ?? "未繳費";
 
             return (
               <article

@@ -31,7 +31,7 @@ export default function AdmissionListLink() {
         <p className="mt-1 text-sm leading-6 text-slate-300">
           {isOpen
             ? "名單已開放查詢，繳費狀態將於核對後更新。"
-            : "2026/11/6 12:00（台灣時間）開放查詢。"}
+            : "2026/11/5 12:00（台灣時間）開放查詢。"}
         </p>
       </div>
       {isOpen ? (

@@ -31,7 +31,7 @@ export default async function AdmissionListPage() {
           </p>
           <h1 className="mb-6 text-4xl font-bold md:text-6xl">正取名單</h1>
           <p className="max-w-3xl text-lg leading-9 text-slate-300">
-            名單將於 2026 年 11 月 6 日 12:00（台灣時間）開放查詢。
+            名單將於 2026 年 11 月 5 日 12:00（台灣時間）開放查詢。
           </p>
         </section>
       </main>

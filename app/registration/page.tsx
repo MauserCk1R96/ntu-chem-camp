@@ -403,6 +403,7 @@ export default function RegistrationPage() {
               </ol>
               <p className="mt-4 text-sm leading-7 text-slate-400">
                 款項核對完成後，將更新錄取名單中的繳費狀態。
+                詳細繳費流程請洽台大化學劉宥廷同學
               </p>
             </div>
           </div>

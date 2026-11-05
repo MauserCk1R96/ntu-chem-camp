@@ -6,6 +6,11 @@ export type AdmissionRecord = {
   paymentStatus?: PaymentStatus;
 };
 
+export type WaitlistRecord = {
+  highSchool: string;
+  maskedName: string;
+};
+
 // 姓名只存遮蔽版本；未設定 paymentStatus 時顯示未繳費，核對款項後改為已繳費。
 export const admissionRecords: AdmissionRecord[] = [
   { highSchool: "基隆女中", maskedName: "吳O澄" },
@@ -88,4 +93,45 @@ export const admissionRecords: AdmissionRecord[] = [
   { highSchool: "中山大學附中", maskedName: "蔣O軒" },
   { highSchool: "華東台商子女學校", maskedName: "蘇O心" },
   { highSchool: "上海台商子女學校", maskedName: "許O凡" },
+];
+
+// 陣列順序即備取序位，請勿依學校或姓名重新排序。
+export const waitlistRecords: WaitlistRecord[] = [
+  { highSchool: "高師大附中", maskedName: "陳O誠" },
+  { highSchool: "台中二中", maskedName: "江O靜" },
+  { highSchool: "明道中學", maskedName: "陳O丞" },
+  { highSchool: "成功高中", maskedName: "蔡O恩" },
+  { highSchool: "高雄義大高級中學", maskedName: "許O佑" },
+  { highSchool: "台中一中", maskedName: "方O橙" },
+  { highSchool: "平鎮高中", maskedName: "林O霖" },
+  { highSchool: "景美女中", maskedName: "吳O潔" },
+  { highSchool: "明倫高中", maskedName: "劉O佑" },
+  { highSchool: "台北市立中山女中", maskedName: "林O萱" },
+  { highSchool: "華僑高中", maskedName: "陳O宇" },
+  { highSchool: "臺北市立第一女子高級中學", maskedName: "楊O育" },
+  { highSchool: "南大附中/目前是自學生", maskedName: "劉O瑜" },
+  { highSchool: "建國中學", maskedName: "李O啟" },
+  { highSchool: "復旦高級中學", maskedName: "廖O喧" },
+  { highSchool: "復旦高中", maskedName: "白O彤" },
+  { highSchool: "臺北市立松山高中", maskedName: "姚O裕" },
+  { highSchool: "台中女中", maskedName: "蔡O好" },
+  { highSchool: "政大附中", maskedName: "蔡O佑" },
+  { highSchool: "永春高中", maskedName: "林O宏" },
+  { highSchool: "正心中學", maskedName: "林O澄" },
+  { highSchool: "台北市立成功高中", maskedName: "高O勛" },
+  { highSchool: "板橋高中", maskedName: "曾O謙" },
+  { highSchool: "建國高級中學", maskedName: "賴O陽" },
+  { highSchool: "高雄私立道明中學", maskedName: "沈O晟" },
+  { highSchool: "復旦高中", maskedName: "楊O瀚" },
+  { highSchool: "復旦高中", maskedName: "楊O悠" },
+  { highSchool: "台北市立南港高中", maskedName: "何O勝" },
+  { highSchool: "中正高中", maskedName: "徐O恩" },
+  { highSchool: "清水高中", maskedName: "王O献" },
+  { highSchool: "國立苑裡高中", maskedName: "程O浩" },
+  { highSchool: "台中一中", maskedName: "蕭O祐" },
+  { highSchool: "永平高中", maskedName: "張O齊" },
+  { highSchool: "台北市立建國高級中學", maskedName: "黃O祐" },
+  { highSchool: "建國中學", maskedName: "張O瑜" },
+  { highSchool: "中山女高", maskedName: "李O珈" },
+  { highSchool: "國立臺南第一高級中學", maskedName: "陳O宇" },
 ];

@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
-import { admissionRecords, type PaymentStatus } from "@/app/admission-list/admission-data";
+import {
+  admissionRecords,
+  waitlistRecords,
+  type PaymentStatus,
+} from "@/app/admission-list/admission-data";
 import { isAdmissionListOpen } from "@/app/admission-list/release";
 
 export const metadata: Metadata = {
-  title: "正取名單與繳費狀態",
-  description: "查詢 2027 台大化學營正取名單與繳費狀態。",
+  title: "正取與備取名單及繳費狀態",
+  description: "查詢 2027 台大化學營正取、備取名單與正取生繳費狀態。",
   robots: {
     index: false,
     follow: false,
@@ -56,11 +60,11 @@ export default async function AdmissionListPage() {
           ADMISSION
         </p>
         <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-          正取名單與繳費狀態
+          正取與備取名單
         </h1>
         <p className="max-w-3xl text-lg leading-9 text-slate-300">
-          以下為 2027 台大化學營正取名單。為保障個人隱私，姓名第二個字以 O
-          取代。繳費狀態將於工作團隊核對後更新，請以錄取通知信件為準。
+          以下為 2027 台大化學營正取與備取名單。為保障個人隱私，姓名第二個字以 O
+          取代。正取生繳費狀態將於工作團隊核對後更新，請以錄取通知信件為準。
         </p>
       </section>
 
@@ -138,6 +142,42 @@ export default async function AdmissionListPage() {
             );
           })}
         </div>
+      </section>
+
+      <section aria-labelledby="waitlist-title" className="mx-auto mt-8 max-w-5xl rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_0_35px_rgba(15,23,42,0.35)] md:p-8">
+        <div className="mb-6">
+          <p className="mb-3 text-sm font-semibold tracking-[0.28em] text-cyan-300">
+            WAITLIST
+          </p>
+          <h2 id="waitlist-title" className="text-2xl font-bold text-cyan-100">
+            備取名單
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-slate-300">
+            共 {waitlistRecords.length} 位，依備取序位排列。遞補通知請以官方信件為準。
+          </p>
+        </div>
+
+        <div className="hidden rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-5 py-3 text-sm font-semibold text-cyan-100 sm:grid sm:grid-cols-[4rem_1.5fr_1fr]">
+          <span>序位</span>
+          <span>高中名稱</span>
+          <span>姓名</span>
+        </div>
+        <ol className="mt-3 grid gap-3">
+          {waitlistRecords.map((record, index) => (
+            <li
+              key={`${index}-${record.highSchool}-${record.maskedName}`}
+              className="grid grid-cols-[3rem_minmax(0,1fr)] gap-3 rounded-2xl bg-white/5 p-5 sm:grid-cols-[4rem_1.5fr_1fr] sm:items-center"
+            >
+              <span className="font-semibold text-cyan-200">{index + 1}</span>
+              <span className="min-w-0 break-words font-semibold text-white">
+                {record.highSchool}
+              </span>
+              <span className="col-start-2 text-slate-200 sm:col-auto">
+                {record.maskedName}
+              </span>
+            </li>
+          ))}
+        </ol>
       </section>
     </main>
   );
